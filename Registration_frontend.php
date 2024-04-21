@@ -121,7 +121,7 @@
     <a href="#contact">Contact</a>
     <a href="#services">Services</a>
     <a href="#about">About</a>
-  <a href="http://localhost/LMS/Registration.php">Register</a>
+  <a href="http://localhost/LMS/Registration_frontend.php">Register</a>
   <div class="dropdown">
   <button class="dropbtn" onclick="myFunction()">Login
     <i class="fa fa-caret-down"></i>
@@ -154,7 +154,7 @@ window.onclick = function(e) {
 </script>
     <div class="container">
         <h2 style="text-align:center">Registration Form</h2>
-        <form action="login.php" method="post">
+        <form action="sign_up.php" method="post">
             <label>Fullname:</label>
             <input type="text" id="fname" name="fname" required>
              
