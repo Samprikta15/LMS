@@ -11,7 +11,7 @@ if(!$rs)
 	die('Data not inserted');
 echo "<br> <br> Registration Successfull<br> <br/>"
 ?>
-<button type="button" ><a href="login.php">OK</a></button>
+<button type="button" ><a href="sign_up.php">OK</a></button>
 <button type="button" ><a href="index.php">Home</a></button>
 
 <?php
