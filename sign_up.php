@@ -2,7 +2,7 @@
 <body >
 <center>
 <div class="container">
-<div class="login">
+<div class="sign_up">
 <?php
 include('connect.php');
 $sql="insert into registration values('".$_REQUEST['fname']."',".$_REQUEST['roll'].",".$_REQUEST['ph'].",'".$_REQUEST['email']."','".$_REQUEST['password']."')";
