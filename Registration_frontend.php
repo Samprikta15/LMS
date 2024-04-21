@@ -155,19 +155,19 @@ window.onclick = function(e) {
     <div class="container">
         <h2 style="text-align:center">Registration Form</h2>
         <form action="sign_up.php" method="post">
-            <label>Fullname:</label>
+            <label for="fname">Fullname:</label>
             <input type="text" id="fname" name="fname" required>
              
-            <label>Roll No:</label>
+            <label for="roll">Roll No:</label>
             <input type="text" id="roll" name="roll" required>
 
-            <label>Phone No:</label>
+            <label for="ph">Phone No:</label>
             <input type="tel" id="ph" name="ph" required><br>
 
-            <label>Email:</label>
+            <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             
-            <label>Password:</label>
+            <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             
            
