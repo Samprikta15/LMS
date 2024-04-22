@@ -126,8 +126,8 @@ window.onclick = function(e) {
 
 </script>
 <br><br>
-<h1><p style="color:white;font-size:100px;text-align:center">MANAGEMENT SYSTEM</p></h1>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<h1><p style="color:white;font-size:70px;text-align:center">MANAGEMENT SYSTEM</p></h1>
+<br><br><br><br><br><br><br>
 <marquee style="color:Aquamarine; width="100%"; height="20px" direction="left"><fontsize:"70"><b><i><u>Please wear a mask and keep social distance</u></i></b></font>
 </marquee>
 
