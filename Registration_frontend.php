@@ -13,9 +13,9 @@
         }
 
         .container {
-            max-width: 500px;
+            max-width: 300px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
             float:right;
                     }
         input[type="text"],
@@ -161,7 +161,7 @@ window.onclick = function(e) {
             <label for="roll">Roll No:</label>
             <input type="text" id="roll" name="roll" required>
 
-            <label for="ph">Phone No:</label>
+            <label for="ph">Phone No:</label><br>
             <input type="tel" id="ph" name="ph" required><br>
 
             <label for="email">Email:</label>
