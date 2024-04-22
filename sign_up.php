@@ -13,7 +13,7 @@
     $password = $_REQUEST['password']; // Password will be hashed later
 	
 
-	$sql="insert into user (fullname,roll_no,phone_no,email,password) VALUES ('$fullname', $roll_no, '$phone_no', '$email', '$hashed_password')";
+	$sql="insert into user (fullname,roll_no,phone_no,email,password) VALUES ('$fullname', $roll_no, '$phone_no', '$email', '$password')";
     $rs = mysqli_query($con, $sql);;
 	$rs=mysqli_query($con,$sql);
 	if(!$rs)
