@@ -14,7 +14,7 @@
 	
 
 	$sql="insert into user (fullname,roll_no,phone_no,email,password) VALUES ('$fullname', $roll_no, '$phone_no', '$email', '$password')";
-    $rs = mysqli_query($con, $sql);;
+    $rs = mysqli_query($con, $sql);
 	$rs=mysqli_query($con,$sql);
 	if(!$rs)
 		die('Data not inserted');
