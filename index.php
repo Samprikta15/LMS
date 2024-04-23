@@ -103,26 +103,6 @@ This ia a project of library management
     <a href="http://localhost/LMS/Teacher.php">Teacher Register</a>
   </div>
   </div>
-</div>
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-  var myDropdown = document.getElementById("myDropdown");
-    if (myDropdown.classList.contains('show')) {
-      myDropdown.classList.remove('show');
-    }
-  }
-}
-
-</script>
-  
   <div class="dropdown">
   <button class="dropbtn" onclick="myFunction()">Login
     <i class="fa fa-caret-down"></i>
@@ -151,8 +131,8 @@ window.onclick = function(e) {
     }
   }
 }
-
 </script>
+  
 <br><br>
 <h1><p style="color:white;font-size:70px;text-align:center">MANAGEMENT SYSTEM</p></h1>
 <br><br><br><br><br><br><br>
