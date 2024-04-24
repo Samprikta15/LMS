@@ -158,7 +158,7 @@ window.onclick = function(e) {
             <label for="fname">Fullname:</label>
             <input type="text" id="fname" name="fname" required>
              
-            <label for="roll">Roll No:</label>
+            <label for="roll">Roll No/ID:</label>
             <input type="text" id="roll" name="roll" required>
 
             <label for="ph">Phone No:</label><br>
