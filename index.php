@@ -92,17 +92,8 @@ This ia a project of library management
 <div class="navbar">
 
     <a href="#contact">Contact</a>
-    <a href="#services">Services</a>
     <a href="#about">About</a>
-    <div class="dropdown">
-  <button class="dropbtn" onclick="myFunction()">Register
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-content" id="myDropdown">
-    <a href="http://localhost/LMS/Registration_frontend.php">Student Register</a>
-    <a href="http://localhost/LMS/Teacher.php">Teacher Register</a>
-  </div>
-  </div>
+    <a href="http://localhost/LMS/Registration_frontend.php">Register</a>
   <div class="dropdown">
   <button class="dropbtn" onclick="myFunction()">Login
     <i class="fa fa-caret-down"></i>
