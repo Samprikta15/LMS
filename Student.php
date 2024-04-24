@@ -124,7 +124,7 @@ body {
 <div class="navbar">
 
     <a href="#contact">Contact</a>
-    <a href="#services">Services</a>
+  
     <a href="#about">About</a>
   <a href="http://localhost/LMS/Registration_frontend.php">Register</a>
   <div class="dropdown">
