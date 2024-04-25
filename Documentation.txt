@@ -5,6 +5,7 @@ table:user
     phone no
     roll_no_or_id
     catagory
+    password
 table:books
     book_id
     book_title
@@ -20,4 +21,3 @@ table:record
     issue_date
     return_date
 table:admin
-    
