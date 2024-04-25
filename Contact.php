@@ -1,4 +1,4 @@
-<!--
+
 <html>
 <html lang="en">
 <head>
@@ -41,7 +41,7 @@
     </footer>
 </body>
 </html>
--->
+<!--
 <html>
 <head>
 <title>Responsive contact page</title>
@@ -84,3 +84,4 @@
 </div>
 </body>
 </html>
+-->
