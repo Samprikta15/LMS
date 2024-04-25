@@ -1,0 +1,23 @@
+table:user
+    user_id
+    name
+    email
+    phone no
+    roll_no_or_id
+    catagory
+table:books
+    book_id
+    book_title
+    author_name
+    catagory
+table:specific_book
+    specific_book_id
+    book_id(foreign_key)
+table:record
+    record_id
+    specific_book_id(foreign_key)
+    user_id(foreign_key)
+    issue_date
+    return_date
+table:admin
+    
