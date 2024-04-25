@@ -1,3 +1,4 @@
+<!--
 <html>
 <html lang="en">
 <head>
@@ -38,5 +39,48 @@
     <footer>
         <p>&copy; 2024 Library Management System. All rights reserved.</p>
     </footer>
+</body>
+</html>
+-->
+<html>
+<head>
+<title>Responsive contact page</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<section class="contact">
+    <div class="content">
+        <h2>Contact Us</h2>
+        <p>   </p>
+    </div>
+    <div class="container">
+        <div class="contactInfo">
+            <div class="box">
+                <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                <div class="text">
+                    <h3>Address</h3>
+                    <p>  </p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                <div class="text">
+                    <h3>Phone</h3>
+                    <p>  </p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                <div class="text">
+                    <h3>Email</h3>
+                    <p>  </p>
+                </div>
+            </div>
+        </div>
+    </div>    
+</section>    
+
+
+</div>
 </body>
 </html>
