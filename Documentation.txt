@@ -1,23 +1,27 @@
 table:user
-    user_id
-    name
-    email
-    phone no
-    roll_no_or_id
-    catagory
-    password
+    user_id(varchar)
+    name(varchar)
+    email(varchar)
+    phone_no(varchar)
+    roll_no_or_id(varchar)
+    catagory{enum(student/teacher)}
+    password(varchar)
 table:books
-    book_id
-    book_title
-    author_name
-    catagory
+    book_id(varchar)
+    book_title(varchar)
+    author_name(varchar)
+    catagory(varchar)
 table:specific_book
-    specific_book_id
-    book_id(foreign_key)
+    specific_book_id(varchar)
+    book_id(foreign_key)(varchar)
 table:record
-    record_id
-    specific_book_id(foreign_key)
-    user_id(foreign_key)
-    issue_date
-    return_date
+    record_id(varchar)
+    specific_book_id(foreign_key)(varchar)
+    user_id(foreign_key)(varchar)
+    issue_date(varchar)
+    return_date(varchar)
 table:admin
+    admin_id(varchar)
+    name(varchar)
+    email(varchar)
+    phone_no(varchar)
