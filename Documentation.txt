@@ -1,5 +1,5 @@
 table:user
-    user_id(varchar)(25)
+    user_id(int)(25)
     name(varchar)(100)
     email(varchar)(100)
     phone_no(varchar)(25)
@@ -7,21 +7,21 @@ table:user
     catagory{enum(student/teacher)}
     password(varchar)(11)
 table:books
-    book_id(varchar)(25)
+    book_id(int)(25)
     book_title(varchar)(100)
     author_name(varchar)(100)
     catagory(varchar)(50)
 table:specific_book
-    specific_book_id(varchar)(25)
+    specific_book_id(int)(25)
     book_id(foreign_key)(varchar)
 table:record
-    record_id(varchar)(25)
+    record_id(int)(25)
     specific_book_id(foreign_key)(varchar)
     user_id(foreign_key)(varchar)
     issue_date(varchar)(25)
     return_date(varchar)(25)
 table:admin
-    admin_id(varchar)(25)
+    admin_id(int)(25)
     name(varchar)(100)
     email(varchar)(100)
     phone_no(varchar)(25)
