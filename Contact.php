@@ -1,10 +1,9 @@
 
 <html>
-<html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="styles.css">
-<style>
-        body {
+    <title>Registration Page</title>
+    <style>
+          body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-image: url('contact.jpg');
@@ -12,7 +11,34 @@
             background-attachment: fixed;
             background-size:100% 100%;
         }
-        
+
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 15px;
+            float:right;
+                    }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 7px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
         .navbar {
             background-color: #008B8B;
             overflow: hidden;
@@ -43,7 +69,7 @@
   border: none;
   outline: none;
   color: white;
-  padding: 6px 20px;
+  padding: 6px 16px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
@@ -85,18 +111,69 @@
   width: 800px;
   margin: auto;
 }
-               
-    </style> 
-<title>
-This ia a project of library management
-</title>
+ 
+.contact-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .contact-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form textarea {
+            height: 100px;
+        }
+
+        .contact-form button {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background: #555;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+ 
 </head>
-<body style="background-color:LightCyan">
+<body>
 <div class="navbar">
 
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-    <a href="http://localhost/LMS/Registration_frontend.php">Register</a>
+    <a href="http://localhost/LMS/Contact.php">Contact</a>
+  <a href="http://localhost/LMS/Registration_frontend.php">Register</a>
   <div class="dropdown">
   <button class="dropbtn" onclick="myFunction()">Login
     <i class="fa fa-caret-down"></i>
@@ -125,10 +202,10 @@ window.onclick = function(e) {
     }
   }
 }
+
 </script>
-    <header>
-        <h1>Contact Us</h1>
-    </header>
+    <div class="container">
+    <h1 style="text-align:center; color: white;">Contact Us</h1>
     <main>
         <section class="contact-form">
             <h2>Get in Touch</h2>
@@ -146,52 +223,7 @@ window.onclick = function(e) {
             </form>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Library Management System. All rights reserved.</p>
-    </footer>
-</body>
-</html>
-<!--
-<html>
-<head>
-<title>Responsive contact page</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-<body>
-<section class="contact">
-    <div class="content">
-        <h2>Contact Us</h2>
-        <p>   </p>
     </div>
-    <div class="container">
-        <div class="contactInfo">
-            <div class="box">
-                <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                <div class="text">
-                    <h3>Address</h3>
-                    <p>  </p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-                <div class="text">
-                    <h3>Phone</h3>
-                    <p>  </p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-                <div class="text">
-                    <h3>Email</h3>
-                    <p>  </p>
-                </div>
-            </div>
-        </div>
-    </div>    
-</section>    
-
-
-</div>
 </body>
 </html>
--->
+
