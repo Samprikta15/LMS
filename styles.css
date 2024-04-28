@@ -7,12 +7,12 @@
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+    line-height: 1;
+    background-color: #60d4e9;
 }
 
 header {
-    background: #333;
+    background: #4edfbb;
     color: #fff;
     padding: 1em 0;
 }
@@ -54,7 +54,7 @@ main {
 }
 
 .contact-form h2 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .contact-form label {
@@ -65,7 +65,7 @@ main {
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-    width: 100%;
+    width: 70%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;

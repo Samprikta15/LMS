@@ -91,8 +91,7 @@ This ia a project of library management
 <body style="background-color:LightCyan">
 <div class="navbar">
 
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+    <a href="http://localhost/LMS/Contact.php">Contact</a>
     <a href="http://localhost/LMS/Registration_frontend.php">Register</a>
   <div class="dropdown">
   <button class="dropbtn" onclick="myFunction()">Login
