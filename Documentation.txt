@@ -13,11 +13,11 @@ table:books
     catagory(varchar)(50)
 table:specific_book
     specific_book_id(int)(25)
-    book_id(foreign_key)(varchar)
+    book_id(foreign_key)(int)
 table:record
     record_id(int)(25)
-    specific_book_id(foreign_key)(varchar)
-    user_id(foreign_key)(varchar)
+    specific_book_id(foreign_key)(int)
+    user_id(foreign_key)(int)
     issue_date(varchar)(25)
     return_date(varchar)(25)
 table:admin
