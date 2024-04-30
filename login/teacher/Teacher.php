@@ -130,7 +130,7 @@ body {
     <a href="http://localhost/LMS/Admin.php">Admin Login</a>
   </div>
   </div>
-    <a href="http://localhost/LMS/index.php">Home</a>
+    <a href="http://localhost/LMS/home/index.php">Home</a>
 </div>
 <script>
 /* When the user clicks on the button, 
