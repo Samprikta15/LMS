@@ -92,7 +92,7 @@ This ia a project of library management
 <div class="navbar">
 
     <a href="http://localhost/LMS/contact/contact.php">Contact</a>
-    <a href="http://localhost/LMS/Registration_frontend.php">Register</a>
+    <a href="http://localhost/LMS/register/Registration_frontend.php">Register</a>
   <div class="dropdown">
   <button class="dropbtn" onclick="myFunction()">Login
     <i class="fa fa-caret-down"></i>
