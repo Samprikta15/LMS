@@ -64,7 +64,7 @@
      
             </div>
             <div id='BooksData' class="DatabaseEntity">
-            <section id="booksTable">
+                <section id="booksTable">
                     <h2>Books Table</h2>
                     <div class="table-container">
                         <table id="booksTableData">
@@ -76,7 +76,7 @@
             <div id='SpecificBooksData' class="DatabaseEntity">
                  
 
-            <section id="specificBookTable">
+                <section id="specificBookTable">
                     <h2>Specific Book Table</h2>
                     <div class="table-container">
                         <table id="specificBookTableData">
