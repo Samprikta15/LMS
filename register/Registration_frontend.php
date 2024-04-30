@@ -126,7 +126,7 @@
   </button>
   <div class="dropdown-content" id="myDropdown">
     <a href="http://localhost/LMS/Student.php">Student Login</a>
-    <a href="http://localhost/LMS/Teacher.php">Teacher Login</a>
+    <a href="http://localhost/LMS/login/teacher/teacher.php">Teacher Login</a>
     <a href="http://localhost/LMS/login/admin/admin.php">Admin Login</a>
   </div>
   </div>
