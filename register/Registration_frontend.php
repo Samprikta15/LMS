@@ -127,10 +127,10 @@
   <div class="dropdown-content" id="myDropdown">
     <a href="http://localhost/LMS/Student.php">Student Login</a>
     <a href="http://localhost/LMS/Teacher.php">Teacher Login</a>
-    <a href="http://localhost/LMS/Admin.php">Admin Login</a>
+    <a href="http://localhost/LMS/login/admin/admin.php">Admin Login</a>
   </div>
   </div>
-    <a href="http://localhost/LMS/index.php">Home</a>
+    <a href="http://localhost/LMS/home/index.php">Home</a>
 </div>
 <script>
 /* When the user clicks on the button, 

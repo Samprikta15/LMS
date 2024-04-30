@@ -100,7 +100,7 @@ This ia a project of library management
   <div class="dropdown-content" id="myDropdown">
     <a href="http://localhost/LMS/Student.php">Student Login</a>
     <a href="http://localhost/LMS/Teacher.php">Teacher Login</a>
-    <a href="http://localhost/LMS/Admin.php">Admin Login</a>
+    <a href="http://localhost/LMS/login/admin/admin.php">Admin Login</a>
   </div>
   </div>
     <a href="http://localhost/LMS/home/index.php">Home</a>
