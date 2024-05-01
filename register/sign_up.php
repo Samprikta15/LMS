@@ -9,7 +9,7 @@
     $roll_no_or_id = ($_REQUEST['roll_no_or_id']); // Assuming roll number is an integer
     $category = ($_REQUEST['dropdown']); // This will give you whether the user is a student or a teacher
     $password = ($_REQUEST['password']); // Password will be hashed later
-	$sql="insert into users (name,email,phone_no,roll_no_or_id,category,password) VALUES ('$name','$email','$phone_no', '$roll_no_or_id', '$category', '$password')";
+	$sql="insert into user (name,email,phone_no,roll_no_or_id,category,password) VALUES ('$name','$email','$phone_no', '$roll_no_or_id', '$category', '$password')";
     $rs = mysqli_query($con, $sql);
 	$rs=mysqli_query($con,$sql);
 	if(!$rs)
