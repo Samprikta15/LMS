@@ -4,7 +4,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-image: url('library.jpeg');
+            background-image: url('home/library.jpeg');
             background-repeat:no-repeat;
             background-attachment: fixed;
             background-size:100% 100%;
