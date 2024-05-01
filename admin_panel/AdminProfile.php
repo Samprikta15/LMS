@@ -32,13 +32,13 @@
 
                         echo "<table border='1'>
                         <tr>
-                        <th>User_id</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone No</th>
-                        <th>Roll No or Id</th>
-                        <th>Category</th>
-                        <th>Password</th>
+                        <th>user_id</th>
+                        <th>name</th>
+                        <th>email</th>
+                        <th>phone_no</th>
+                        <th>roll_no_or_id</th>
+                        <th>category</th>
+                        <th>password</th>
                         </tr>";
 
                         while ($row = mysqli_fetch_assoc($result)) {

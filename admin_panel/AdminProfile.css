@@ -61,7 +61,7 @@ body {
     padding:10px;
     padding-left:20px;
     color: white;
-    font-size: 23px;
+    font-size: 20px;
     font-family: "Roboto Slab", serif;
     border-radius: 20px;
 }
@@ -93,6 +93,21 @@ section {
     transition: background-color 0.3s;
 }
 
+
+
 .edit-btn:hover {
     background-color: #6a1b9a;
 }
+.create-btn{
+    background-color: #6918b5;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    /* transition: background-color 0.3s; */
+}
+.create-btn:hover{background-color: #5a108a;}
+.create-btn:active
+{background-color: #2f183e;}
