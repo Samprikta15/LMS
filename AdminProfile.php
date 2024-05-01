@@ -9,55 +9,60 @@
 <body>
     <div class="TitleBar">
         <h1>Admin Pannel</h1>
+
     </div>
     <div class="container">
         <div class="sub_container left_container">
 
             <div id='UserData' class="DatabaseEntity">
-                <section id="userTable">
+                <div style='display:flex; justify-content:space-between;'>
                     <h2>User Table</h2>
-                    <div class="table-container">
-                       
+                    <button class="create-btn">Create New</button>
 
+                </div>
+                <section id="userTable">
+                    <div class="table-container">
+                        <table id="editable-table">
                         <?php
                        
-                        session_start();
-                        include('connect.php');
-                        $query = "SELECT * FROM user";
-                        $result = mysqli_query($con, $query);
+                            session_start();
+                            include('connect.php');
+                            $query = "SELECT * FROM users";
+                            $result = mysqli_query($con, $query);
 
-                        if (!$result) {
-                            die('Error in query: ' . mysqli_error($con));
-                        }
+                            if (!$result) {
+                                die('Error in query: ' . mysqli_error($con));
+                            }
 
-                        echo "<table border='1'>
-                        <tr>
-                        <th>user_id</th>
-                        <th>name</th>
-                        <th>email</th>
-                        <th>phone_no</th>
-                        <th>roll_no_or_id</th>
-                        <th>category</th>
-                        <th>password</th>
-                        </tr>";
+                            echo "<table border='1'>
+                            <tr>
+                            <th>user_id</th>
+                            <th>name</th>
+                            <th>email</th>
+                            <th>phone_no</th>
+                            <th>roll_no_or_id</th>
+                            <th>category</th>
+                            <th>password</th>
+                            </tr>";
 
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo "<tr>";
-                            echo "<td>" . $row['user_id'] . "</td>";
-                            echo "<td>" . $row['name'] . "</td>";
-                            echo "<td>" . $row['email'] . "</td>";
-                            echo "<td>" . $row['phone_no'] . "</td>";
-                            echo "<td>" . $row['roll_no_or_id'] . "</td>";
-                            echo "<td>" . $row['category'] . "</td>";
-                            echo "<td>" . $row['password'] . "</td>";
-                            echo "</tr>";
-                        }
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "<tr>";
+                                echo "<td contenteditable='false'>" . $row['user_id'] . "</td>";
+                                echo "<td contenteditable='false'>" . $row['name'] . "</td>";
+                                echo "<td contenteditable='false'>" . $row['email'] . "</td>";
+                                echo "<td contenteditable='false'>" . $row['phone_no'] . "</td>";
+                                echo "<td contenteditable='false'>" . $row['roll_no_or_id'] . "</td>";
+                                echo "<td contenteditable='false'>" . $row['category'] . "</td>";
+                                echo "<td contenteditable='false'>" . $row['password'] . "</td>";
+                                echo "<td><button class='edit-btn'>Edit</button></td>";
+                                echo "</tr>";
+                            }
 
-                        echo "</table>";
+                            echo "</table>";
 
-                        mysqli_close($con);
+                            mysqli_close($con);
                         ?>
-
+                        </table>
                     </div>
                 </section>
 
