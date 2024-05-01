@@ -153,18 +153,24 @@
     <div class="container">
         <h2 style="text-align:center">Registration Form</h2>
         <form action="sign_up.php" method="post">
-            <label for="fname">Fullname:</label>
-            <input type="text" id="fname" name="fname" required>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
              
-            <label for="roll">Roll No/ID:</label>
-            <input type="text" id="roll" name="roll" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
             <label for="ph">Phone No:</label><br>
             <input type="tel" id="ph" name="ph" required><br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
+            <label for="roll">Roll No or Id:</label>
+            <input type="text" id="roll" name="roll" required>
+
+            <select name = "dropdown">
+              <option value = "student" selected>Student</option>
+              <option value = "teacher">Teacher</option>
+            </select>
+            <br>
+
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             
