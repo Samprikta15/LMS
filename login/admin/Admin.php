@@ -131,6 +131,7 @@
     </div>
     </div>
       <a href="http://localhost/LMS/">Home</a>
+
   </div>
 <script>
   /* When the user clicks on the button, 
