@@ -130,7 +130,7 @@
     <a href="http://localhost/LMS/login/admin/admin.php">Admin Login</a>
   </div>
   </div>
-    <a href="http://localhost/LMS/home/index.php">Home</a>
+    <a href="http://localhost/LMS/index.php">Home</a>
 </div>
 <script>
   /* When the user clicks on the button, 
@@ -164,7 +164,7 @@
 
             <label for="roll_no_or_id">Roll No or Id:</label>
             <input type="text" id="roll_no_or_id" name="roll_no_or_id" required>
-            
+
             <select name = "dropdown">
               <option value = "student" selected>Student</option>
               <option value = "teacher">Teacher</option>
