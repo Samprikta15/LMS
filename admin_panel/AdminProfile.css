@@ -46,6 +46,8 @@ body {
 }
 .left_container{
     /* background-color:#2e0099; */
+    max-height:80vh ;
+    /* overflow-y:auto; */
     flex:4;
     margin: 15px;
 }
@@ -61,7 +63,7 @@ body {
     padding:10px;
     padding-left:20px;
     color: white;
-    font-size: 23px;
+    font-size: 20px;
     font-family: "Roboto Slab", serif;
     border-radius: 20px;
 }
@@ -81,6 +83,7 @@ table th, table td {
 
 section {
     margin-bottom: 40px;
+    /* overflow: scroll; */
 }
 
 .edit-btn {
@@ -93,6 +96,115 @@ section {
     transition: background-color 0.3s;
 }
 
+
+
 .edit-btn:hover {
     background-color: #6a1b9a;
 }
+.create-btn{
+    background-color: #6918b5;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    /* transition: background-color 0.3s; */
+}
+.create-btn:hover{background-color: #5a108a;}
+.create-btn:active
+{background-color: #2f183e;}
+
+
+
+
+
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6 );
+  }
+  
+  .popup-content {
+    background-color: rgba(16, 8, 30, 0.7);
+    margin: 10% auto;
+    padding: 20px 40px;
+    
+    /* border: 1px solid #fff; */
+    width: 40%;
+    
+    border-radius: 20px;
+  }
+  .popup-content  h2{
+    color:white;
+  }
+  .close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 14px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  input[type="password"]:focus {
+    background-color: #f2f2f2;
+  }
+  
+  button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  select[name="category"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 14px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #555;
+    font-size: 16px;
+  }
+  
+  select[name="category"]:focus {
+    outline: none;
+    border-color: #8a2be2;
+  }
