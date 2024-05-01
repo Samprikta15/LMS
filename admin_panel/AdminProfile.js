@@ -28,6 +28,32 @@ specific_book_info_btn.addEventListener("click",  ()=>change_database_display("S
 record_info_btn.addEventListener("click",  ()=>change_database_display("Records"))
 admin_info_btn.addEventListener("click",  ()=>change_database_display("Admin"))
 
+// Data Create 
+document.getElementById("create-user-btn").addEventListener("click", function() {
+  document.getElementById("popupUserForm").style.display = "block";
+})
+
+document.getElementById("UserFromClose").addEventListener("click", function() {
+  document.getElementById("popupUserForm").style.display = "none";})
+
+window.onclick = function(event) {
+  if (event.target == document.getElementById("popupUserForm")) {
+    document.getElementById("popupUserForm").style.display = "none";
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Select all edit buttons
 const editButtons = document.querySelectorAll('.edit-btn');
