@@ -21,7 +21,7 @@ $password=$data['password'];
 
 
 // Update Data into Database
-$query = "UPDATE `users` SET `name`='$name', `email`='$email', `phone_no`='$phone_no', `roll_no_or_id`='$roll_no_or_id', `category`='$category', `password`='$password' where `user_id`='$user_id'";
+$query = "UPDATE `user` SET `name`='$name', `email`='$email', `phone_no`='$phone_no', `roll_no_or_id`='$roll_no_or_id', `category`='$category', `password`='$password' where `user_id`='$user_id'";
 
 $result = mysqli_query($con, $query);
 // Close Connection

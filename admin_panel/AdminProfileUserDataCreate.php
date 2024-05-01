@@ -30,7 +30,7 @@ file_put_contents($logFile, $password . PHP_EOL, FILE_APPEND);
 
 
 // Insert data into database
-$query = "INSERT INTO users (`name`, `email`, `phone_no`, `roll_no_or_id`, `category`, `password`) VALUES ('$name', '$email', '$phone_no', '$roll_no_or_id', '$category', '$password')";
+$query = "INSERT INTO user (`name`, `email`, `phone_no`, `roll_no_or_id`, `category`, `password`) VALUES ('$name', '$email', '$phone_no', '$roll_no_or_id', '$category', '$password')";
 $result = mysqli_query($con, $query);
 
 
