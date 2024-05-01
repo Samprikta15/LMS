@@ -11,61 +11,80 @@
         <h1>Admin Pannel</h1>
 
     </div>
+    <div id="popupUserForm" class="popup">
+        <form id="myForm" class="popup-content" action='AdminProfileUserDataCreate.php'>
+            <span id='UserFromClose' class="close">&times;</span>
+            <h2>Enter User Data </h2>
+            <br>
+            <input type="text" placeholder="Name" name="name" required>
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="tel" placeholder="Phone Number" name="phone_no" required>
+            <input type="text" placeholder="Roll Number or ID" name="roll_no_or_id" required>
+            <select name="category" required>
+            <option value="" disabled selected>Select category</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Student">Student</option>
+            </select>
+            <input type="text" placeholder="Password" name="password" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
     <div class="container">
         <div class="sub_container left_container">
 
             <div id='UserData' class="DatabaseEntity">
                 <div style='display:flex; justify-content:space-between;'>
                     <h2>User Table</h2>
-                    <button class="create-btn">Create New</button>
-
+                    <button id='create-user-btn' class="create-btn">Create New</button>
                 </div>
-                <section id="userTable">
-                    <div class="table-container">
-                        <table id="editable-table">
-                        <?php
-                       
-                            session_start();
-                            include('connect.php');
-                            $query = "SELECT * FROM users";
-                            $result = mysqli_query($con, $query);
+                <br>
+                <div style='display:block;overflow-y:scroll;padding:0px 10px;max-height:80vh'>
+                    <section id="userTable">
+                        <div class="table-container">
+                            <table id="editable-table">
+                            <?php
+                        
+                                session_start();
+                                include('connect.php');
+                                $query = "SELECT * FROM users";
+                                $result = mysqli_query($con, $query);
 
-                            if (!$result) {
-                                die('Error in query: ' . mysqli_error($con));
-                            }
+                                if (!$result) {
+                                    die('Error in query: ' . mysqli_error($con));
+                                }
 
-                            echo "<table border='1'>
-                            <tr>
-                            <th>user_id</th>
-                            <th>name</th>
-                            <th>email</th>
-                            <th>phone_no</th>
-                            <th>roll_no_or_id</th>
-                            <th>category</th>
-                            <th>password</th>
-                            </tr>";
+                                echo "<table border='1'>
+                                <tr>
+                                <th>user_id</th>
+                                <th>name</th>
+                                <th>email</th>
+                                <th>phone_no</th>
+                                <th>roll_no_or_id</th>
+                                <th>category</th>
+                                <th>password</th>
+                                </tr>";
 
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                echo "<tr>";
-                                echo "<td contenteditable='false'>" . $row['user_id'] . "</td>";
-                                echo "<td contenteditable='false'>" . $row['name'] . "</td>";
-                                echo "<td contenteditable='false'>" . $row['email'] . "</td>";
-                                echo "<td contenteditable='false'>" . $row['phone_no'] . "</td>";
-                                echo "<td contenteditable='false'>" . $row['roll_no_or_id'] . "</td>";
-                                echo "<td contenteditable='false'>" . $row['category'] . "</td>";
-                                echo "<td contenteditable='false'>" . $row['password'] . "</td>";
-                                echo "<td><button class='edit-btn'>Edit</button></td>";
-                                echo "</tr>";
-                            }
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo "<tr>";
+                                    echo "<td contenteditable='false'>" . $row['user_id'] . "</td>";
+                                    echo "<td contenteditable='false'>" . $row['name'] . "</td>";
+                                    echo "<td contenteditable='false'>" . $row['email'] . "</td>";
+                                    echo "<td contenteditable='false'>" . $row['phone_no'] . "</td>";
+                                    echo "<td contenteditable='false'>" . $row['roll_no_or_id'] . "</td>";
+                                    echo "<td contenteditable='false'>" . $row['category'] . "</td>";
+                                    echo "<td contenteditable='false'>" . $row['password'] . "</td>";
+                                    echo "<td><button class='edit-btn'>Edit</button></td>";
+                                    echo "</tr>";
+                                }
 
-                            echo "</table>";
+                                echo "</table>";
 
-                            mysqli_close($con);
-                        ?>
-                        </table>
-                    </div>
-                </section>
-
+                                mysqli_close($con);
+                            ?>
+                            </table>
+                        </div>
+                    </section>
+                </div>
      
             </div>
             <div id='BooksData' class="DatabaseEntity">
