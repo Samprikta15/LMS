@@ -6,10 +6,12 @@
 	<?php
 	include('connect.php');	
 
-	$fullname = ($_REQUEST['fname']);
+	$name = ($_REQUEST['name']);
+	$email = ($_REQUEST['email']);
+	$phone_no = ($_REQUEST['ph']);
     $roll_no = (int)$_REQUEST['roll']; // Assuming roll number is an integer
-    $phone_no = ($_REQUEST['ph']);
-    $email = ($_REQUEST['email']);
+    
+    
     $password = $_REQUEST['password']; // Password will be hashed later
 	
 
