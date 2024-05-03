@@ -55,13 +55,13 @@
 
                                 echo "<table border='1'>
                                 <tr>
-                                <th>user_id</th>
-                                <th>name</th>
-                                <th>email</th>
-                                <th>phone_no</th>
-                                <th>roll_no_or_id</th>
-                                <th>category</th>
-                                <th>password</th>
+                                <th>User_id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone_no</th>
+                                <th>Roll_no_or_id</th>
+                                <th>Category</th>
+                                <th>Password</th>
                                 </tr>";
 
                                 while ($row = mysqli_fetch_assoc($result)) {
@@ -92,7 +92,40 @@
                     <h2>Books Table</h2>
                     <div class="table-container">
                         <table id="booksTableData">
-                            <!-- Books table data will be inserted here -->
+                            <?php
+                        
+                                
+                                include('connect.php');
+                                $query = "SELECT * FROM books";
+                                $result = mysqli_query($con, $query);
+
+                                if (!$result) {
+                                    die('Error in query: ' . mysqli_error($con));
+                                }
+
+                                echo "<table border='1'>
+                                <tr>
+                                <th>Book_id</th>
+                                <th>Book_title</th>
+                                <th>Author_name</th>
+                                <th>category</th>
+                                
+                                </tr>";
+
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo "<tr>";
+                                    echo "<td contenteditable='false'>" . $row['book_id'] . "</td>";
+                                    echo "<td contenteditable='false'>" . $row['book_title'] . "</td>";
+                                    echo "<td contenteditable='false'>" . $row['author_name'] . "</td>";
+                                    echo "<td contenteditable='false'>" . $row['category'] . "</td>";
+                                    echo "<td><button class='edit-btn'>Edit</button></td>";
+                                    echo "</tr>";
+                                }
+
+                                echo "</table>";
+
+                                mysqli_close($con);
+                            ?>
                         </table>
                     </div>
                 </section>
