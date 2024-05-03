@@ -137,7 +137,36 @@
                     <h2>Specific Book Table</h2>
                     <div class="table-container">
                         <table id="specificBookTableData">
-                            <!-- Specific Book table data will be inserted here -->
+                        <?php
+                        
+                                
+                        include('connect.php');
+                        $query = "SELECT * FROM specific_book";
+                        $result = mysqli_query($con, $query);
+
+                        if (!$result) {
+                            die('Error in query: ' . mysqli_error($con));
+                        }
+
+                        echo "<table border='1'>
+                        <tr>
+                        <th>Specific_book_id</th>
+                        <th>Book_id</th>
+                        
+                        </tr>";
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr>";
+                            echo "<td contenteditable='false'>" . $row['specific_book_id'] . "</td>";
+                            echo "<td contenteditable='false'>" . $row['book_id'] . "</td>";
+                            echo "<td><button class='edit-btn'>Edit</button></td>";
+                            echo "</tr>";
+                        }
+
+                        echo "</table>";
+
+                        mysqli_close($con);
+                    ?>
                         </table>
                     </div>
                 </section>
