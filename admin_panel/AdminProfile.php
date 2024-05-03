@@ -172,10 +172,96 @@
                 </section>
             </div>   
             <div id='Records' class="DatabaseEntity">
-                <div>Records </div>
-            </div>   
-        </div>
+                
+                <section id="Records">
+                    <h2>Records</h2>
+                    <div class="table-container">
+                        <table id="Records">
+                        <?php
+                        
+                                
+                        include('connect.php');
+                        $query = "SELECT * FROM record";
+                        $result = mysqli_query($con, $query);
 
+                        if (!$result) {
+                            die('Error in query: ' . mysqli_error($con));
+                        }
+
+                        echo "<table border='1'>
+                        <tr>
+                        <th>Record_id</th>
+                        <th>Specific_book_id</th>
+                        <th>User_id</th>
+                        <th>Issue_date</th>
+                        <th>Return_date</th>
+                        
+                        </tr>";
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr>";
+                            echo "<td contenteditable='false'>" . $row['record_id'] . "</td>";
+                            echo "<td contenteditable='false'>" . $row['specific_book_id'] . "</td>";
+                            echo "<td contenteditable='false'>" . $row['user_id'] . "</td>";
+                            echo "<td contenteditable='false'>" . $row['issue_date'] . "</td>";
+                            echo "<td contenteditable='false'>" . $row['return_date'] . "</td>";
+                            echo "<td><button class='edit-btn'>Edit</button></td>";
+                            echo "</tr>";
+                        }
+
+                        echo "</table>";
+
+                        mysqli_close($con);
+                    ?>
+                        </table>
+                    </div>
+                </section>
+            </div>   
+            <div id='Admin' class="DatabaseEntity">
+                
+                <section id="Admin">
+                    <h2>Admin</h2>
+                    <div class="table-container">
+                        <table id="Admin">
+                        <?php
+                        
+                                
+                        include('connect.php');
+                        $query = "SELECT * FROM admin";
+                        $result = mysqli_query($con, $query);
+
+                        if (!$result) {
+                            die('Error in query: ' . mysqli_error($con));
+                        }
+
+                        echo "<table border='1'>
+                        <tr>
+                        <th>Admin_id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone_no</th>
+                        
+                        </tr>";
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr>";
+                            echo "<td contenteditable='false'>" . $row['admin_id'] . "</td>";
+                            echo "<td contenteditable='false'>" . $row['name'] . "</td>";
+                            echo "<td contenteditable='false'>" . $row['email'] . "</td>";
+                            echo "<td contenteditable='false'>" . $row['phone_no'] . "</td>";
+                            echo "<td><button class='edit-btn'>Edit</button></td>";
+                            echo "</tr>";
+                        }
+
+                        echo "</table>";
+
+                        mysqli_close($con);
+                    ?>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
         
         <div class="sub_container right_container">
             <div id='user_info_btn' class=EntityName> User Data</div>
