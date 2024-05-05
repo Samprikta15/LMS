@@ -85,7 +85,7 @@
                         </div>
                     </section>
                 </div>
-     
+
             </div>
             <div id='BooksData' class="DatabaseEntity">
                 <section id="booksTable">
@@ -109,7 +109,6 @@
                                 <th>Book_title</th>
                                 <th>Author_name</th>
                                 <th>category</th>
-                                
                                 </tr>";
 
                                 while ($row = mysqli_fetch_assoc($result)) {
@@ -195,7 +194,6 @@
                         <th>User_id</th>
                         <th>Issue_date</th>
                         <th>Return_date</th>
-                        
                         </tr>";
 
                         while ($row = mysqli_fetch_assoc($result)) {
