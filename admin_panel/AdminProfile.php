@@ -87,6 +87,24 @@
                 </div>
 
             </div>
+            <div id="popupBooksForm" class="popup">
+                <form id="myForm" class="popup-content" action='AdminProfileBooksDataCreate.php'>
+                    <span id='UserFromClose' class="close">&times;</span>
+                    <h2>Enter User Data </h2>
+                    <br>
+                    <input type="text" placeholder="Name" name="name" required>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="tel" placeholder="Phone Number" name="phone_no" required>
+                    <input type="text" placeholder="Roll Number or ID" name="roll_no_or_id" required>
+                    <select name="category" required>
+                    <option value="" disabled selected>Select category</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Student">Student</option>
+                    </select>
+                    <input type="text" placeholder="Password" name="password" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
             <div id='BooksData' class="DatabaseEntity">
                 <section id="booksTable">
                     <h2>Books Table</h2>
@@ -128,6 +146,24 @@
                         </table>
                     </div>
                 </section>
+            </div>
+            <div id="popupSpecificBookForm" class="popup">
+                <form id="myForm" class="popup-content" action='AdminProfileSpecificBookDataCreate.php'>
+                    <span id='UserFromClose' class="close">&times;</span>
+                    <h2>Enter User Data </h2>
+                    <br>
+                    <input type="text" placeholder="Name" name="name" required>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="tel" placeholder="Phone Number" name="phone_no" required>
+                    <input type="text" placeholder="Roll Number or ID" name="roll_no_or_id" required>
+                    <select name="category" required>
+                    <option value="" disabled selected>Select category</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Student">Student</option>
+                    </select>
+                    <input type="text" placeholder="Password" name="password" required>
+                    <button type="submit">Submit</button>
+                </form>
             </div>    
             <div id='SpecificBooksData' class="DatabaseEntity">
                  
@@ -169,6 +205,24 @@
                         </table>
                     </div>
                 </section>
+            </div>
+            <div id="popupRecordsForm" class="popup">
+                <form id="myForm" class="popup-content" action='AdminProfileRecordsDataCreate.php'>
+                    <span id='UserFromClose' class="close">&times;</span>
+                    <h2>Enter User Data </h2>
+                    <br>
+                    <input type="text" placeholder="Name" name="name" required>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="tel" placeholder="Phone Number" name="phone_no" required>
+                    <input type="text" placeholder="Roll Number or ID" name="roll_no_or_id" required>
+                    <select name="category" required>
+                    <option value="" disabled selected>Select category</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Student">Student</option>
+                    </select>
+                    <input type="text" placeholder="Password" name="password" required>
+                    <button type="submit">Submit</button>
+                </form>
             </div>   
             <div id='Records' class="DatabaseEntity">
                 
@@ -214,6 +268,24 @@
                         </table>
                     </div>
                 </section>
+            </div>
+            <div id="popupAdminForm" class="popup">
+                <form id="myForm" class="popup-content" action='AdminProfileAdminDataCreate.php'>
+                    <span id='UserFromClose' class="close">&times;</span>
+                    <h2>Enter User Data </h2>
+                    <br>
+                    <input type="text" placeholder="Name" name="name" required>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="tel" placeholder="Phone Number" name="phone_no" required>
+                    <input type="text" placeholder="Roll Number or ID" name="roll_no_or_id" required>
+                    <select name="category" required>
+                    <option value="" disabled selected>Select category</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Student">Student</option>
+                    </select>
+                    <input type="text" placeholder="Password" name="password" required>
+                    <button type="submit">Submit</button>
+                </form>
             </div>   
             <div id='Admin' class="DatabaseEntity">
                 
