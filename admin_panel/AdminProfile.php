@@ -92,16 +92,9 @@
                     <span id='UserFromClose' class="close">&times;</span>
                     <h2>Enter User Data </h2>
                     <br>
-                    <input type="text" placeholder="Name" name="name" required>
-                    <input type="email" placeholder="Email" name="email" required>
-                    <input type="tel" placeholder="Phone Number" name="phone_no" required>
-                    <input type="text" placeholder="Roll Number or ID" name="roll_no_or_id" required>
-                    <select name="category" required>
-                    <option value="" disabled selected>Select category</option>
-                    <option value="Teacher">Teacher</option>
-                    <option value="Student">Student</option>
-                    </select>
-                    <input type="text" placeholder="Password" name="password" required>
+                    <input type="text" placeholder="Book_Title" name="book_title" required>
+                    <input type="text" placeholder="Author_Name" name="author_name" required>
+                    <input type="text" placeholder="Category" name="category" required>
                     <button type="submit">Submit</button>
                 </form>
             </div>
@@ -152,16 +145,7 @@
                     <span id='UserFromClose' class="close">&times;</span>
                     <h2>Enter User Data </h2>
                     <br>
-                    <input type="text" placeholder="Name" name="name" required>
-                    <input type="email" placeholder="Email" name="email" required>
-                    <input type="tel" placeholder="Phone Number" name="phone_no" required>
-                    <input type="text" placeholder="Roll Number or ID" name="roll_no_or_id" required>
-                    <select name="category" required>
-                    <option value="" disabled selected>Select category</option>
-                    <option value="Teacher">Teacher</option>
-                    <option value="Student">Student</option>
-                    </select>
-                    <input type="text" placeholder="Password" name="password" required>
+                    <input type="int" placeholder="Book_Id" name="book_id" required>
                     <button type="submit">Submit</button>
                 </form>
             </div>    
@@ -211,16 +195,10 @@
                     <span id='UserFromClose' class="close">&times;</span>
                     <h2>Enter User Data </h2>
                     <br>
-                    <input type="text" placeholder="Name" name="name" required>
-                    <input type="email" placeholder="Email" name="email" required>
-                    <input type="tel" placeholder="Phone Number" name="phone_no" required>
-                    <input type="text" placeholder="Roll Number or ID" name="roll_no_or_id" required>
-                    <select name="category" required>
-                    <option value="" disabled selected>Select category</option>
-                    <option value="Teacher">Teacher</option>
-                    <option value="Student">Student</option>
-                    </select>
-                    <input type="text" placeholder="Password" name="password" required>
+                    <input type="int" placeholder="Specific_Book_Id" name="specific_book_id" required>
+                    <input type="int" placeholder="User_Id" name="user_id" required>
+                    <input type="text" placeholder="Issue_Date" name="issue_date" required>
+                    <input type="text" placeholder="Return_Date" name="return_date" required>
                     <button type="submit">Submit</button>
                 </form>
             </div>   
@@ -277,13 +255,6 @@
                     <input type="text" placeholder="Name" name="name" required>
                     <input type="email" placeholder="Email" name="email" required>
                     <input type="tel" placeholder="Phone Number" name="phone_no" required>
-                    <input type="text" placeholder="Roll Number or ID" name="roll_no_or_id" required>
-                    <select name="category" required>
-                    <option value="" disabled selected>Select category</option>
-                    <option value="Teacher">Teacher</option>
-                    <option value="Student">Student</option>
-                    </select>
-                    <input type="text" placeholder="Password" name="password" required>
                     <button type="submit">Submit</button>
                 </form>
             </div>   
