@@ -91,8 +91,6 @@
                         <div class="table-container">
                             <table id="editable-table">
                             <?php
-                        
-                                session_start();
                                 include('connect.php');
                                 $query = "SELECT * FROM user";
                                 $result = mysqli_query($con, $query);
@@ -138,7 +136,10 @@
 
             <div id='BooksData' class="DatabaseEntity">
                 <section id="booksTable">
-                    <h2>Books Table</h2>
+                    <div style='display:flex; justify-content:space-between;'>
+                        <h2>Books Table</h2>
+                        <button id='create-user-btn' class="create-btn">Create New</button>
+                    </div>
                     <div class="table-container">
                         <table id="booksTableData">
                             <?php
@@ -180,10 +181,11 @@
             </div>
        
             <div id='SpecificBooksData' class="DatabaseEntity">
-                 
-
                 <section id="specificBookTable">
-                    <h2>Specific Book Table</h2>
+                    <div style='display:flex; justify-content:space-between;'>
+                        <h2>Specific Book Table</h2>
+                        <button id='create-specific-book-btn' class="create-btn">Create New</button>
+                    </div>
                     <div class="table-container">
                         <table id="specificBookTableData">
                         <?php
@@ -222,9 +224,11 @@
             </div>
 
             <div id='Records' class="DatabaseEntity">
-                
                 <section id="Records">
-                    <h2>Records</h2>
+                    <div style='display:flex; justify-content:space-between;'>
+                        <h2>Records</h2>
+                        <button id='create-record-btn' class="create-btn">Create New</button>
+                    </div>
                     <div class="table-container">
                         <table id="Records">
                         <?php
@@ -270,7 +274,10 @@
             <div id='Admin' class="DatabaseEntity">
                 
                 <section id="Admin">
-                    <h2>Admin</h2>
+                    <div style='display:flex; justify-content:space-between;'>
+                        <h2>Admin</h2>
+                        <button id='create-admin-btn' class="create-btn">Create New</button>
+                    </div>
                     <div class="table-container">
                         <table id="Admin">
                         <?php
