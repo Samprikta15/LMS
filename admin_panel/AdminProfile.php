@@ -29,6 +29,54 @@
             <button type="submit">Submit</button>
         </form>
     </div>
+
+
+    <div id="popupBooksForm" class="popup">
+        <form id="myForm" class="popup-content" action='AdminProfileBooksDataCreate.php'>
+            <span id='UserFromClose' class="close">&times;</span>
+            <h2>Enter User Data </h2>
+            <br>
+            <input type="text" placeholder="Book_Title" name="book_title" required>
+            <input type="text" placeholder="Author_Name" name="author_name" required>
+            <input type="text" placeholder="Category" name="category" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="popupRecordsForm" class="popup">
+        <form id="myForm" class="popup-content" action='AdminProfileRecordsDataCreate.php'>
+            <span id='UserFromClose' class="close">&times;</span>
+            <h2>Enter User Data </h2>
+            <br>
+            <input type="int" placeholder="Specific_Book_Id" name="specific_book_id" required>
+            <input type="int" placeholder="User_Id" name="user_id" required>
+            <input type="text" placeholder="Issue_Date" name="issue_date" required>
+            <input type="text" placeholder="Return_Date" name="return_date" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>  
+
+    <div id="popupSpecificBookForm" class="popup">
+        <form id="myForm" class="popup-content" action='AdminProfileSpecificBookDataCreate.php'>
+            <span id='UserFromClose' class="close">&times;</span>
+            <h2>Enter User Data </h2>
+            <br>
+            <input type="int" placeholder="Book_Id" name="book_id" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>    
+
+    <div id="popupAdminForm" class="popup">
+        <form id="myForm" class="popup-content" action='AdminProfileAdminDataCreate.php'>
+            <span id='UserFromClose' class="close">&times;</span>
+            <h2>Enter User Data </h2>
+            <br>
+            <input type="text" placeholder="Name" name="name" required>
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="tel" placeholder="Phone Number" name="phone_no" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>  
+
     <div class="container">
         <div class="sub_container left_container">
 
@@ -87,17 +135,7 @@
                 </div>
 
             </div>
-            <div id="popupBooksForm" class="popup">
-                <form id="myForm" class="popup-content" action='AdminProfileBooksDataCreate.php'>
-                    <span id='UserFromClose' class="close">&times;</span>
-                    <h2>Enter User Data </h2>
-                    <br>
-                    <input type="text" placeholder="Book_Title" name="book_title" required>
-                    <input type="text" placeholder="Author_Name" name="author_name" required>
-                    <input type="text" placeholder="Category" name="category" required>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
+
             <div id='BooksData' class="DatabaseEntity">
                 <section id="booksTable">
                     <h2>Books Table</h2>
@@ -140,15 +178,7 @@
                     </div>
                 </section>
             </div>
-            <div id="popupSpecificBookForm" class="popup">
-                <form id="myForm" class="popup-content" action='AdminProfileSpecificBookDataCreate.php'>
-                    <span id='UserFromClose' class="close">&times;</span>
-                    <h2>Enter User Data </h2>
-                    <br>
-                    <input type="int" placeholder="Book_Id" name="book_id" required>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>    
+       
             <div id='SpecificBooksData' class="DatabaseEntity">
                  
 
@@ -190,18 +220,7 @@
                     </div>
                 </section>
             </div>
-            <div id="popupRecordsForm" class="popup">
-                <form id="myForm" class="popup-content" action='AdminProfileRecordsDataCreate.php'>
-                    <span id='UserFromClose' class="close">&times;</span>
-                    <h2>Enter User Data </h2>
-                    <br>
-                    <input type="int" placeholder="Specific_Book_Id" name="specific_book_id" required>
-                    <input type="int" placeholder="User_Id" name="user_id" required>
-                    <input type="text" placeholder="Issue_Date" name="issue_date" required>
-                    <input type="text" placeholder="Return_Date" name="return_date" required>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>   
+
             <div id='Records' class="DatabaseEntity">
                 
                 <section id="Records">
@@ -247,17 +266,7 @@
                     </div>
                 </section>
             </div>
-            <div id="popupAdminForm" class="popup">
-                <form id="myForm" class="popup-content" action='AdminProfileAdminDataCreate.php'>
-                    <span id='UserFromClose' class="close">&times;</span>
-                    <h2>Enter User Data </h2>
-                    <br>
-                    <input type="text" placeholder="Name" name="name" required>
-                    <input type="email" placeholder="Email" name="email" required>
-                    <input type="tel" placeholder="Phone Number" name="phone_no" required>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>   
+
             <div id='Admin' class="DatabaseEntity">
                 
                 <section id="Admin">
