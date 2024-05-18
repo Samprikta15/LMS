@@ -138,7 +138,7 @@
                 <section id="booksTable">
                     <div style='display:flex; justify-content:space-between;'>
                         <h2>Books Table</h2>
-                        <button id='create-user-btn' class="create-btn">Create New</button>
+                        <button id='create-book-btn' class="create-btn">Create New</button>
                     </div>
                     <div class="table-container">
                         <table id="booksTableData">
