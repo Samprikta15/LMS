@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $admin_password = mysqli_real_escape_string($con, $admin_password);
 
     // Fetch the admin record from the database
-    $sql = "SELECT * FROM admins WHERE email='$admin_email' AND password='$admin_password'";
+    $sql = "SELECT * FROM admin WHERE email='$admin_email' AND password='$admin_password'";
     $result = mysqli_query($con, $sql);
 
     if (mysqli_num_rows($result) == 1) {
@@ -28,3 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 mysqli_close($con); // Close the database connection
 ?>
+
+<?php
+		mysqli_close($con);
+		//Redirect to a specific URL
+		header("Location: ../AdminProfile.php");
+		exit; // Make sure to exit after the redirect to prevent further execution
+	?>
