@@ -157,7 +157,7 @@
     <h2>Admin Login</h2>
     <form action="admin_login.php" method="post">
         <input type="text" name="admin_email" placeholder="Email" required>
-        <input type="password" name="admin_password" placeholder="Password" required>
+        <input type="tel" name="admin_phone_no" placeholder="Phone_no" required>
         <input type="submit" value="Login">
         <input type="submit" value="Forgot Password ?">
     </form>
