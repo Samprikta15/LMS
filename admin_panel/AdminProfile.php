@@ -42,6 +42,17 @@
             <button type="submit">Submit</button>
         </form>
     </div>
+     
+    <div id="popupSpecificBookForm" class="popup">
+        <form id="myForm" class="popup-content" action='AdminProfileSpecificBookDataCreate.php'>
+            <span id='UserFromClose' class="close">&times;</span>
+            <h2>Enter User Data </h2>
+            <br>
+            <input type="int" placeholder="Book_Id" name="book_id" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>    
+
     <div id="popupRecordsForm" class="popup">
         <form id="myForm" class="popup-content" action='AdminProfileRecordsDataCreate.php'>
             <span id='UserFromClose' class="close">&times;</span>
@@ -53,18 +64,8 @@
             <input type="text" placeholder="Return_Date" name="return_date" required>
             <button type="submit">Submit</button>
         </form>
-    </div>  
-
-    <div id="popupSpecificBookForm" class="popup">
-        <form id="myForm" class="popup-content" action='AdminProfileSpecificBookDataCreate.php'>
-            <span id='UserFromClose' class="close">&times;</span>
-            <h2>Enter User Data </h2>
-            <br>
-            <input type="int" placeholder="Book_Id" name="book_id" required>
-            <button type="submit">Submit</button>
-        </form>
-    </div>    
-
+    </div> 
+    
     <div id="popupAdminForm" class="popup">
         <form id="myForm" class="popup-content" action='AdminProfileAdminDataCreate.php'>
             <span id='UserFromClose' class="close">&times;</span>

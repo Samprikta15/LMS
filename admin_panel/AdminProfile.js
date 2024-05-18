@@ -36,8 +36,8 @@ admin_info_btn.addEventListener("click",  ()=>change_database_display("Admin"))
 button_to_popup_map ={
   'create-user-btn':'popupUserForm',
   'create-book-btn':'popupBooksForm',
-  'create-specific-book-btn':'popupRecordsForm',
   'create-record-btn':'popupSpecificBookForm',
+  'create-specific-book-btn':'popupRecordsForm',
   'create-admin-btn':'popupAdminForm'
 }
 
