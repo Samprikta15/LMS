@@ -159,7 +159,7 @@ window.onclick = function(e) {
 </div>
 <div class="login-section">
     <h2><font color="white">Student Login</h2>
-    <form action="/student_login" method="post">
+    <form action="student_login.php" method="post">
         <input type="text" name="student_email" placeholder="Email" required>
         <input type="password" name="student_password" placeholder="Password" required>
         <input type="submit" value="Login">

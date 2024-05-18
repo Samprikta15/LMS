@@ -155,7 +155,7 @@
 </div>
 <div class="login-section">
     <h2>Admin Login</h2>
-    <form action="/admin_login" method="post">
+    <form action="admin_login.php" method="post">
         <input type="text" name="admin_email" placeholder="Email" required>
         <input type="password" name="admin_password" placeholder="Password" required>
         <input type="submit" value="Login">
