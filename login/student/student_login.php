@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $student_password = mysqli_real_escape_string($con, $student_password);
 
     // Fetch the student record from the database
-    $sql = "SELECT * FROM students WHERE email='$student_email'";
+    $sql = "SELECT * FROM user WHERE email='$student_email'";
     $result = mysqli_query($con, $sql);
 
     if (mysqli_num_rows($result) == 1) {
