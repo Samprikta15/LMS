@@ -301,7 +301,55 @@ function handleButtonClick(event) {
 }
 
 
+// Function to handle button click
+function handleButtonClick(event) {
+  const button = event.target;
+  const row = button.parentNode.parentNode;
+  const isEditMode = button.textContent === 'Submit';
 
+  if (isEditMode) {
+    // Save changes
+    const rowData = {
+      admin_id: row.cells[0].textContent,
+      name: row.cells[1].textContent,
+      email: row.cells[2].textContent,
+      phone_no: row.cells[3].textContent,
+    };
+
+
+
+
+
+
+
+
+    // Send data to PHP script using fetch API
+    fetch('AdminProfileAdminDataUpdate.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(rowData)
+    })
+    .then(response => {
+      if (response.ok) {
+        // Change button text back to Edit
+        button.textContent = 'Edit';
+        toggleEditMode(row);
+      } else {
+        throw new Error('Failed to save data');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  } else {
+    // Enter edit mode
+    toggleEditMode(row);
+    // Change button text to Submit
+    button.textContent = 'Submit';
+  }
+}
 
 
 // Attach click event listeners to all edit buttons
