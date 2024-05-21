@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $admin_phone_no = mysqli_real_escape_string($con, $admin_phone_no);
 
     // Fetch the admin record from the database
-    $sql = "SELECT * FROM admin WHERE email='$admin_email' AND password='$admin_phone_no'";
+    $sql = "SELECT * FROM admin WHERE email='$admin_email' AND phone_no='$admin_phone_no'";
     $result = mysqli_query($con, $sql);
 
     if (mysqli_num_rows($result) == 1) {
