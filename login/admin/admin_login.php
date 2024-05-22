@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($result) == 1) {
         // Login successful
         $_SESSION['admin_email'] = $admin_email;
-        header("Location: AdminProfile.php"); // Redirect to admin dashboard
+        header("Location: http://localhost/LMS/admin_panel/AdminProfile.php"); // Redirect to admin dashboard
         exit;
     } else {
         // Login failed
