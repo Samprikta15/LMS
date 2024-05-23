@@ -1,5 +1,6 @@
 <html>
 <head>
+<link rel="stylesheet" href="student_dashboard.css">
 <style>
 
 body {
@@ -158,5 +159,6 @@ window.onclick = function(e) {
 <div style="padding:20px">
 </div>
 
+<script src="student_dashboard.js"></script>
 </body>
 </html>
