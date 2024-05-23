@@ -158,7 +158,16 @@ window.onclick = function(e) {
 </script>
 <div style="padding:20px">
 </div>
-
+<div id="dashboardPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h1>Student Dashboard</h1>
+            <p id="studentName"></p>
+            <p id="studentEmail"></p>
+            <p id="studentBio"></p>
+        </div>
+</div>
+<button id='create-user-btn' class="create-btn">User Profile</button>
 <script src="student_dashboard.js"></script>
 </body>
 </html>

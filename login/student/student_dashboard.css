@@ -2,7 +2,7 @@
 
 
 .create-btn{
-    background-color: #6918b5;
+    background-color: #22aa93;
     color: #fff;
     border: none;
     padding: 6px 12px;
@@ -11,7 +11,7 @@
     font-size: 15px;
     /* transition: background-color 0.3s; */
 }
-.create-btn:hover{background-color: #5a108a;}
+.create-btn:hover{background-color: #27e0c2;}
 .create-btn:active
 {background-color: #2f183e;}
 

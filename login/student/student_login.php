@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($student_password, $row['password'])) {
             // Password is correct, login successful
             $_SESSION['student_email'] = $student_email;
-            header("Location: student_dashboard.php"); // Redirect to student dashboard
+            header("Location: http://localhost/LMS/login/student/student_dashboard.php"); // Redirect to student dashboard
             exit;
         } else {
             // Invalid password
