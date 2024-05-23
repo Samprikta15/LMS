@@ -327,6 +327,7 @@
             <div id='specific_book_info_btn' class=EntityName> Spesific Book Details </div>
             <div id='record_info_btn' class=EntityName> Record History</div>
             <div id='admin_info_btn' class=EntityName> Admin</div>
+            <div id='home_info_btn' class=EntityName> <a href="http://localhost/LMS">Home</div>
         </div>
     </div>
 
