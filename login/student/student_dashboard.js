@@ -1,10 +1,6 @@
 
 button_to_popup_map ={
-    'create-user-btn':'popupUserForm',
-    'create-book-btn':'popupBooksForm',
-    'create-record-btn':'popupRecordsForm',
-    'create-specific-book-btn':'popupSpecificBookForm',
-    'create-admin-btn':'popupAdminForm'
+    'user-profile-btn':'dashboardPopup',
   }
   
   create_button_list=Array.from(document.getElementsByClassName('create-btn'))

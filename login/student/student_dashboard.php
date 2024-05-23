@@ -167,7 +167,7 @@ window.onclick = function(e) {
             <p id="studentBio"></p>
         </div>
 </div>
-<button id='create-user-btn' class="create-btn">User Profile</button>
+<button id='user-profile-btn' class="create-btn">User Profile</button>
 <script src="student_dashboard.js"></script>
 </body>
 </html>
