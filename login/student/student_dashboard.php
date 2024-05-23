@@ -162,9 +162,40 @@ window.onclick = function(e) {
         <div class="popup-content">
             <span class="close-btn">&times;</span>
             <h1>Student Dashboard</h1>
-            <p id="studentName"></p>
-            <p id="studentEmail"></p>
-            <p id="studentBio"></p>
+            <?php
+                include('connect.php');
+                $query = "SELECT * FROM user WHERE category='Student'";
+                $result = mysqli_query($con, $query);
+
+                if (!$result) {
+                    ie('Error in query: ' . mysqli_error($con));
+                }
+
+                echo "
+                User_id <br>
+                Name
+                Email
+                Phone_no
+                Roll_no_or_id
+                Category
+                Password
+                ";
+
+                while ($row = mysqli_fetch_assoc($result)) {
+                echo $row['user_id'];
+                echo $row['name'];
+                echo $row['email'];
+                echo $row['phone_no'];
+                echo $row['roll_no_or_id'];
+                echo $row['category'];
+                echo $row['password'];
+                
+                }
+
+                
+
+                mysqli_close($con);
+            ?>
         </div>
 </div>
 <button id='user-profile-btn' class="create-btn">User Profile</button>
