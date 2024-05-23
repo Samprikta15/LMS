@@ -34,7 +34,7 @@
     <div id="popupBooksForm" class="popup">
         <form id="myForm" class="popup-content" action='AdminProfileBooksDataCreate.php'>
             <span id='UserFromClose' class="close">&times;</span>
-            <h2>Enter User Data </h2>
+            <h2>Enter Books Data </h2>
             <br>
             <input type="text" placeholder="Book_Title" name="book_title" required>
             <input type="text" placeholder="Author_Name" name="author_name" required>
@@ -46,7 +46,7 @@
     <div id="popupSpecificBookForm" class="popup">
         <form id="myForm" class="popup-content" action='AdminProfileSpecificBookDataCreate.php'>
             <span id='UserFromClose' class="close">&times;</span>
-            <h2>Enter User Data </h2>
+            <h2>Enter Specific Book Data </h2>
             <br>
             <input type="int" placeholder="Book_Id" name="book_id" required>
             <button type="submit">Submit</button>
@@ -56,7 +56,7 @@
     <div id="popupRecordsForm" class="popup">
         <form id="myForm" class="popup-content" action='AdminProfileRecordsDataCreate.php'>
             <span id='UserFromClose' class="close">&times;</span>
-            <h2>Enter User Data </h2>
+            <h2>Enter Records Data </h2>
             <br>
             <input type="int" placeholder="Specific_Book_Id" name="specific_book_id" required>
             <input type="int" placeholder="User_Id" name="user_id" required>
@@ -69,7 +69,7 @@
     <div id="popupAdminForm" class="popup">
         <form id="myForm" class="popup-content" action='AdminProfileAdminDataCreate.php'>
             <span id='UserFromClose' class="close">&times;</span>
-            <h2>Enter User Data </h2>
+            <h2>Enter Admin Data </h2>
             <br>
             <input type="text" placeholder="Name" name="name" required>
             <input type="email" placeholder="Email" name="email" required>
