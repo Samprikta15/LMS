@@ -173,16 +173,16 @@ window.onclick = function(e) {
 
                 echo "
                 User_id <br>
-                Name
-                Email
-                Phone_no
-                Roll_no_or_id
-                Category
-                Password
+                Name <br>
+                Email <br>
+                Phone_no <br>
+                Roll_no_or_id <br>
+                Category <br>
+                Password <br>
                 ";
 
                 while ($row = mysqli_fetch_assoc($result)) {
-                echo $row['user_id'];
+                echo "User_id <br> ".$row['user_id'];
                 echo $row['name'];
                 echo $row['email'];
                 echo $row['phone_no'];
