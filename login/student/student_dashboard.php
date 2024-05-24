@@ -170,27 +170,16 @@ window.onclick = function(e) {
                 if (!$result) {
                     ie('Error in query: ' . mysqli_error($con));
                 }
-
-                echo "
-                User_id <br>
-                Name <br>
-                Email <br>
-                Phone_no <br>
-                Roll_no_or_id <br>
-                Category <br>
-                Password <br>
-                ";
-
                 while ($row = mysqli_fetch_assoc($result)) {
-                echo "User_id <br> ".$row['user_id'];
-                echo $row['name'];
-                echo $row['email'];
-                echo $row['phone_no'];
-                echo $row['roll_no_or_id'];
-                echo $row['category'];
-                echo $row['password'];
-                
+                echo "User_id :"; echo $row['user_id']; echo "<br>";
+                echo "Name :" ;echo $row['name']; echo "<br>";
+                echo "Email :" ;echo $row['email']; echo "<br>";
+                echo "Phone_no:" ;echo $row['phone_no']; echo "<br>";
+                echo "Roll_no_or_id" ;echo $row['roll_no_or_id']; echo "<br>";
+                echo "Category" ;echo $row['category']; echo "<br>";
+                echo "Password:"; echo $row['password']; echo "<br>";
                 }
+                
 
                 
 
