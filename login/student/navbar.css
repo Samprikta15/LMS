@@ -1,0 +1,115 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('s.jpeg');
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-size:100% 100%;
+}
+
+.login-section {
+    width: 500px;
+    margin: 50px auto;
+    padding: 50px;  
+                 
+}
+.login-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-section input[type="text"],
+.login-section input[type="password"],
+.login-section input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+      
+}
+
+.login-section input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.login-section input[type="submit"]:hover {
+    background-color: #45a049;
+    
+}
+.navbar {
+    background-color: #008B8B;
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 6px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #008B8B;
+    color: black;
+}
+
+.dropdown {
+float: left;
+overflow: hidden;
+}
+
+.dropdown .dropbtn {
+cursor: pointer;
+font-size: 16px;  
+border: none;
+outline: none;
+color: white;
+padding: 6px 16px;
+background-color: inherit;
+font-family: inherit;
+margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+background-color: #008B8B;
+color: black;
+
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #008B8B;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content a {
+float: none;
+color: white;
+padding: 6px 16px;
+text-decoration: none;
+display: block;
+text-align: center;
+}
+
+.dropdown-content a:hover {
+background-color: #008B8B;
+}
+
+.show {
+display: block;
+}
+
+.wrapper {
+width: 800px;
+margin: auto;
+}
