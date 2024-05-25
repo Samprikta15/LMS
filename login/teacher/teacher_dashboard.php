@@ -93,6 +93,12 @@ window.onclick = function(e) {
               </div>
           </div>      
 </div>
+<div class="search-container">
+            <form autocomplete="off">
+                <input type="text" placeholder="Search..." id="search" onkeyup="showSuggestions(this.value)">
+                <div id="suggestions" class="suggestions-box"></div>
+            </form>
+        </div>
 <button id='user-profile-btn' class="profile-btn">User Profile</button>
 <script src="teacher_dashboard.js"></script>
 </body>

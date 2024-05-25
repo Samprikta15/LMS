@@ -35,3 +35,45 @@ create_button.addEventListener( "click",
       document.querySelector('.action-buttons').style.display = 'none';
       // Here you would typically send the data to the server
   }
+/*search bar*/
+const suggestions = [
+  'Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape', 'Honeydew', 
+  'Kiwi', 'Lemon', 'Mango', 'Nectarine', 'Orange', 'Papaya', 'Quince', 'Raspberry', 
+  'Strawberry', 'Tomato', 'Ugli fruit', 'Vanilla', 'Watermelon', 'Xigua', 'Yellow Passion Fruit', 'Zucchini'
+];
+
+function showSuggestions(value) {
+  let suggestionBox = document.getElementById('suggestions');
+  suggestionBox.innerHTML = '';
+  if (value.length === 0) {
+      suggestionBox.style.display = 'none';
+      return;
+  }
+  const filteredSuggestions = suggestions.filter(suggestion => 
+      suggestion.toLowerCase().includes(value.toLowerCase())
+  );
+
+  filteredSuggestions.forEach(suggestion => {
+      const suggestionDiv = document.createElement('div');
+      suggestionDiv.textContent = suggestion;
+      suggestionDiv.onclick = function() {
+          document.getElementById('search').value = suggestion;
+          suggestionBox.innerHTML = '';
+          suggestionBox.style.display = 'none';
+      };
+      suggestionBox.appendChild(suggestionDiv);
+  });
+
+  if (filteredSuggestions.length > 0) {
+      suggestionBox.style.display = 'block';
+  } else {
+      suggestionBox.style.display = 'none';
+  }
+}
+
+document.addEventListener('click', function(event) {
+  const suggestionBox = document.getElementById('suggestions');
+  if (!event.target.closest('.search-container')) {
+      suggestionBox.style.display = 'none';
+  }
+});

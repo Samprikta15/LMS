@@ -46,9 +46,6 @@ window.onclick = function(e) {
 <div style="padding:20px">
 </div>
 <div id="studentDashboardPopup" class="popup">
-
-
-
           <div class="profile-card">
               <div class="card-header">
                   <h2>Student Profile</h2>
@@ -84,6 +81,14 @@ window.onclick = function(e) {
               </div>
           </div>      
 </div>
+
+        <div class="search-container">
+            <form autocomplete="off">
+                <input type="text" placeholder="Search..." id="search" onkeyup="showSuggestions(this.value)">
+                <div id="suggestions" class="suggestions-box"></div>
+            </form>
+        </div>
+
 <button id='user-profile-btn' class="profile-btn">User Profile</button>
 <script src="student_dashboard.js"></script>
 </body>
