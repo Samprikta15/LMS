@@ -164,7 +164,11 @@ window.onclick = function(e) {
             <h1>Student Dashboard</h1>
             <?php
                 include('connect.php');
-                $query = "SELECT * FROM user WHERE category='Student'";
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                  $password = $_POST['password'];
+                $password = mysqli_real_escape_string($con, $password);
+                }
+                $query = "SELECT * FROM user WHERE category='Student' AND password='$password'";
                 $result = mysqli_query($con, $query);
 
                 if (!$result) {
