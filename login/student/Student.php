@@ -1,5 +1,6 @@
 <html>
 <head>
+<link rel="stylesheet" href="navbar.css">
 <style>
 
 body {
@@ -44,78 +45,7 @@ body {
             background-color: #45a049;
             
         }
-        .navbar {
-            background-color: #008B8B;
-            overflow: hidden;
-        }
         
-        .navbar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 6px 20px;
-            text-decoration: none;
-        }
-        
-        .navbar a:hover {
-            background-color: #008B8B;
-            color: black;
-        }
-
-        .dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  cursor: pointer;
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 6px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-  background-color: #008B8B;
-   color: black;
-
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #008B8B;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: white;
-  padding: 6px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-}
-
-.dropdown-content a:hover {
-  background-color: #008B8B;
-}
-
-.show {
-  display: block;
-}
-
-.wrapper {
-  width: 800px;
-  margin: auto;
-}
  
  </style>
 

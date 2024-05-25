@@ -39,42 +39,52 @@ window.onclick = function(e) {
 }
 
 </script>
+
+
+
+
 <div style="padding:20px">
 </div>
-<div id="dashboardPopup" class="popup">
-        <div class="popup-content">
-            <span class="close-btn">&times;</span>
-            <h1>Student Dashboard</h1>
-            <?php
-                include('connect.php');
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                  $password = $_POST['password'];
-                $password = mysqli_real_escape_string($con, $password);
-                }
-                $query = "SELECT * FROM user WHERE category='Student' ";
-                $result = mysqli_query($con, $query);
+<div id="studentDashboardPopup" class="popup">
 
-                if (!$result) {
-                    ie('Error in query: ' . mysqli_error($con));
-                }
-                while ($row = mysqli_fetch_assoc($result)) {
-                echo "User_id :"; echo $row['user_id']; echo "<br>";
-                echo "Name :" ;echo $row['name']; echo "<br>";
-                echo "Email :" ;echo $row['email']; echo "<br>";
-                echo "Phone_no:" ;echo $row['phone_no']; echo "<br>";
-                echo "Roll_no_or_id" ;echo $row['roll_no_or_id']; echo "<br>";
-                echo "Category" ;echo $row['category']; echo "<br>";
-                echo "Password:"; echo $row['password']; echo "<br>";
-                }
-                
 
-                
 
-                mysqli_close($con);
-            ?>
-        </div>
+          <div class="profile-card">
+              <div class="card-header">
+                  <h2>Student Profile</h2>
+                  <button class="student_edit-btn" onclick="toggleEditMode()">Edit</button>
+              </div>
+              <div class="card-body">
+              <?php
+                  include('connect.php');
+                  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $password = $_POST['password'];
+                  $password = mysqli_real_escape_string($con, $password);
+                  }
+                  $query = "SELECT * FROM user WHERE category='Student' and email='a@gmail.com'";
+                  $result = mysqli_query($con, $query);
+
+                  if (!$result) {
+                      ie('Error in query: ' . mysqli_error($con));
+                  }
+                  while ($row = mysqli_fetch_assoc($result)) {
+                  echo "<p><strong> User_id : </strong>    <span id='user-id' class='editable'>"; echo $row['user_id']; echo "</span></p>";
+                  echo "<p><strong> Name : </strong>    <span id='user-name' class='editable'>" ;echo $row['name']; echo "</span></p>";
+                  echo "<p><strong> Email : </strong>    <span id='user-email' class='editable'>" ;echo $row['email']; echo "</span></p>";
+                  echo "<p><strong> Phone_no : </strong>    <span id='user-phone' class='editable'>" ;echo $row['phone_no']; echo "</span></p>";
+                  echo "<p><strong> Roll_no_or_id : </strong>    <span id='user-roll' class='editable'>" ;echo $row['roll_no_or_id']; echo "</span></p>";
+                 
+                  }
+                  mysqli_close($con);
+              ?>
+                  <div class="action-buttons" style="display: none;">
+                    <button type="button" onclick="submitForm()">Submit</button>
+                    <button type="button" onclick="toggleEditMode()">Cancel</button>
+                </div>
+              </div>
+          </div>      
 </div>
-<button id='user-profile-btn' class="create-btn">User Profile</button>
+<button id='user-profile-btn' class="profile-btn">User Profile</button>
 <script src="student_dashboard.js"></script>
 </body>
 </html>
