@@ -120,7 +120,7 @@
                                     echo "<td contenteditable='false'>" . $row['roll_no_or_id'] . "</td>";
                                     echo "<td contenteditable='false'>" . $row['category'] . "</td>";
                                     echo "<td contenteditable='false'>" . $row['password'] . "</td>";
-                                    echo "<td><button class='edit-btn'>Edit</button></td>";
+                                    echo "<td><button class='edit-btn usr-btn'>Edit</button></td>";
                                     echo "</tr>";
                                 }
 
@@ -168,7 +168,7 @@
                                     echo "<td contenteditable='false'>" . $row['book_title'] . "</td>";
                                     echo "<td contenteditable='false'>" . $row['author_name'] . "</td>";
                                     echo "<td contenteditable='false'>" . $row['category'] . "</td>";
-                                    echo "<td><button class='edit-btn'>Edit</button></td>";
+                                    echo "<td><button class='edit-btn books-btn'>Edit</button></td>";
                                     echo "</tr>";
                                 }
 
@@ -211,7 +211,7 @@
                             echo "<tr>";
                             echo "<td contenteditable='false'>" . $row['specific_book_id'] . "</td>";
                             echo "<td contenteditable='false'>" . $row['book_id'] . "</td>";
-                            echo "<td><button class='edit-btn'>Edit</button></td>";
+                            echo "<td><button class='edit-btn spe-book-btn'>Edit</button></td>";
                             echo "</tr>";
                         }
 
@@ -259,7 +259,7 @@
                             echo "<td contenteditable='false'>" . $row['user_id'] . "</td>";
                             echo "<td contenteditable='false'>" . $row['issue_date'] . "</td>";
                             echo "<td contenteditable='false'>" . $row['return_date'] . "</td>";
-                            echo "<td><button class='edit-btn'>Edit</button></td>";
+                            echo "<td><button class='edit-btn rec-btn'>Edit</button></td>";
                             echo "</tr>";
                         }
 
@@ -307,7 +307,7 @@
                             echo "<td contenteditable='false'>" . $row['name'] . "</td>";
                             echo "<td contenteditable='false'>" . $row['email'] . "</td>";
                             echo "<td contenteditable='false'>" . $row['phone_no'] . "</td>";
-                            echo "<td><button class='edit-btn'>Edit</button></td>";
+                            echo "<td><button class='edit-btn admin-btn'>Edit</button></td>";
                             echo "</tr>";
                         }
 

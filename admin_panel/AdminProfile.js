@@ -73,7 +73,13 @@ window.onclick = function(event) {
 
 
 // Select all edit buttons
-const editButtons = document.querySelectorAll('.edit-btn');
+const editButtonsUsr = document.querySelectorAll( ".usr-btn")
+const editButtonsBook = document.querySelectorAll( ".books-btn")
+const editButtonsSpec = document.querySelectorAll( ".spe-book-btn")
+const editButtonsRec = document.querySelectorAll( ".rec-btn")
+const editButtonsAdmin = document.querySelectorAll( ".admin-btn")
+
+
 
 // Function to toggle edit mode
 function toggleEditMode(row) {
@@ -87,7 +93,8 @@ function toggleEditMode(row) {
 }
 
 // Function to handle button click
-function handleButtonClick(event) {
+function handleButtonClickUsr(event) {
+  console.log("Handle Button Click ")
   const button = event.target;
   const row = button.parentNode.parentNode;
   const isEditMode = button.textContent === 'Submit';
@@ -103,14 +110,6 @@ function handleButtonClick(event) {
       category: row.cells[5].textContent,
       password: row.cells[6].textContent,
     };
-
-
-
-
-
-
-
-
     // Send data to PHP script using fetch API
     fetch('AdminProfileUserDataUpdate.php', {
       method: 'POST',
@@ -120,6 +119,7 @@ function handleButtonClick(event) {
       body: JSON.stringify(rowData)
     })
     .then(response => {
+      console.log("UserData Update is called")
       if (response.ok) {
         // Change button text back to Edit
         button.textContent = 'Edit';
@@ -147,7 +147,9 @@ function handleButtonClick(event) {
 
 
 // Function to handle button click
-function handleButtonClick(event) {
+function handleButtonClickBook(event) {
+ console.log("Book Clicked ")
+
   const button = event.target;
   const row = button.parentNode.parentNode;
   const isEditMode = button.textContent === 'Submit';
@@ -161,14 +163,7 @@ function handleButtonClick(event) {
       category: row.cells[3].textContent,
     };
 
-
-
-
-
-
-
-
-    // Send data to PHP script using fetch API
+   // Send data to PHP script using fetch API
     fetch('AdminProfileBooksDataUpdate.php', {
       method: 'POST',
       headers: {
@@ -197,11 +192,11 @@ function handleButtonClick(event) {
 }
 
 // Function to handle button click
-function handleButtonClick(event) {
+function handleButtonClickSpec(event) {
   const button = event.target;
   const row = button.parentNode.parentNode;
   const isEditMode = button.textContent === 'Submit';
-
+ console.log("Specific Book Btn Clicked")
   if (isEditMode) {
     // Save changes
     const rowData = {
@@ -250,7 +245,9 @@ function handleButtonClick(event) {
 
 
 // Function to handle button click
-function handleButtonClick(event) {
+function handleButtonClickRec(event) {
+ console.log("Record Btn Clicked")
+  
   const button = event.target;
   const row = button.parentNode.parentNode;
   const isEditMode = button.textContent === 'Submit';
@@ -266,7 +263,7 @@ function handleButtonClick(event) {
     };
 
 
-
+    console.log(rowData)
 
 
 
@@ -281,6 +278,8 @@ function handleButtonClick(event) {
       body: JSON.stringify(rowData)
     })
     .then(response => {
+     console.log("Record Update")
+
       if (response.ok) {
         // Change button text back to Edit
         button.textContent = 'Edit';
@@ -302,7 +301,7 @@ function handleButtonClick(event) {
 
 
 // Function to handle button click
-function handleButtonClick(event) {
+function handleButtonClickAdmin(event) {
   const button = event.target;
   const row = button.parentNode.parentNode;
   const isEditMode = button.textContent === 'Submit';
@@ -353,9 +352,24 @@ function handleButtonClick(event) {
 
 
 // Attach click event listeners to all edit buttons
-editButtons.forEach(button => {
-  button.addEventListener('click', handleButtonClick);
+
+
+editButtonsUsr.forEach(button => {
+  button.addEventListener('click', handleButtonClickUsr);
 });
+editButtonsBook.forEach(button => {
+  button.addEventListener('click', handleButtonClickBook);
+});
+editButtonsSpec.forEach(button => {
+  button.addEventListener('click', handleButtonClickSpec);
+});
+editButtonsRec.forEach(button => {
+  button.addEventListener('click', handleButtonClickRec);
+});
+editButtonsAdmin.forEach(button => {
+  button.addEventListener('click', handleButtonClickAdmin);
+});
+
 
 
 
