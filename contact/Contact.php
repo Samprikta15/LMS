@@ -6,7 +6,7 @@
           body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-image: url('contact.jpg');
+            background-image: url('about.jpg');
             background-repeat:no-repeat;
             background-attachment: fixed;
             background-size:100% 100%;
@@ -157,14 +157,22 @@
             background: #555;
         }
 
+     
         footer {
-            background: #333;
-            color: #fff;
+            
+            color: white;
             text-align: center;
             padding: 1em 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        }
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 1em;
+        }
+
+        footer a:hover {
+            color: white;
         }
     </style>
  
@@ -204,26 +212,33 @@ window.onclick = function(e) {
 }
 
 </script>
-    <div class="container">
-    <h1 style="text-align:center; color: white;">Contact Us</h1>
-    <main>
-        <section class="contact-form">
-            <h2>Get in Touch</h2>
-            <form action="#" method="post">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
 
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
-    </div>
+<FONT FACE="CALIBRI" COLOR=ORANGE SIZE=6>
+<U><H3>ABOUT</H3></U></FONT>
+<FONT FACE="ARIAL" SIZE=4 COLOR=WHITE>
+<OL TYPE=1><LI><B> WHAT IS LIBRARY?</B></LI>
+A place set apart to contain books, periodicals, and other materials for reading, viewing, listening, study or reference.<BR>
+<P><LI><B>WHY SHOULD WE CHOOSE LIBRARY OVER E-BOOK?</B></LI></P></OL>
+Libraries are invaluable institutions that promote knowledge, personal growth, empowerment, and community engagement. They provide access to a wealth of resources, cultivate a love of reading, offer lifelong learning opportunities, and serve as social hubs that bring communities together.<BR>
+Physical books help readers absorb and recall content more effectively. Turning pages as we read creates an “index” in the brain, mapping what we read visually to a particular page.</FONT></ALIGN>
+<FONT FACE="CALIBRI" COLOR=ORANGE SIZE=6>
+<U><H3>CONTACT US</H3></U></FONT> 
+<FONT FACE="ARIAL" SIZE=4 COLOR=WHITE>
+<OL TYPE=1>
+<LI><B>EMAIL</B>-abcdef@gmail.com<P></LI>
+<LI><B>WORKING DAYS/HOURS</B></LI><BR>
+Mon-Sat/ 9:30A.M-6:00P.M<P>
+<B>Guaranteed response time within 24-48hours.</B></ALIGN></FONT>
+<FONT FACE="CALIBRI" COLOR=ORANGE SIZE=6>
+<U><H3>REGISTERED WAREHOUSE ADDRESS</H3></U></FONT>
+<FONT FACE="ARIAL" SIZE=4 COLOR=WHITE>
+5/3, Mahatma Gandhi Road, Howrah Railway Station, Kadam Tala, Howrah, West Bengal 711101
+</FONT>
+<footer>
+        <p>&copy; Copyright 2024 library management system. Made in West Bengal.</p>
+       
+    </footer>
 </body>
 </html>
 
