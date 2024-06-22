@@ -37,8 +37,8 @@ mysqli_close($con); // Close the database connection
 ?>
 
 <?php
-	mysqli_close($con);
+	//mysqli_close($con);
 	//Redirect to a specific URL
-	header("Location: ../index.php");
+	header("Location: http://localhost/LMS/login/student/student_dashboard.php");
 	exit; // Make sure to exit after the redirect to prevent further execution
 ?>
