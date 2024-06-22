@@ -110,6 +110,7 @@ function handleButtonClickUsr(event) {
       category: row.cells[5].textContent,
       password: row.cells[6].textContent,
     };
+    console.log(rowData);
     // Send data to PHP script using fetch API
     fetch('AdminProfileUserDataUpdate.php', {
       method: 'POST',
@@ -162,7 +163,7 @@ function handleButtonClickBook(event) {
       author_name: row.cells[2].textContent,
       category: row.cells[3].textContent,
     };
-
+console.log(rowData);
    // Send data to PHP script using fetch API
     fetch('AdminProfileBooksDataUpdate.php', {
       method: 'POST',
@@ -174,6 +175,7 @@ function handleButtonClickBook(event) {
     .then(response => {
       if (response.ok) {
         // Change button text back to Edit
+        console.log("PHP Scripts has been run. ")
         button.textContent = 'Edit';
         toggleEditMode(row);
       } else {
@@ -181,6 +183,7 @@ function handleButtonClickBook(event) {
       }
     })
     .catch(error => {
+      console.log("Error");
       console.error('Error:', error);
     });
   } else {
@@ -264,11 +267,6 @@ function handleButtonClickRec(event) {
 
 
     console.log(rowData)
-
-
-
-
-
     // Send data to PHP script using fetch API
     fetch('AdminProfileRecordsDataUpdate.php', {
       method: 'POST',

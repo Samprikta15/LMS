@@ -247,7 +247,7 @@
                         
                                 
                         include('connect.php');
-                        $query = "SELECT * FROM record";
+                        $query = "SELECT * FROM records";
                         $result = mysqli_query($con, $query);
 
                         if (!$result) {
