@@ -16,7 +16,10 @@ $book_title = $_REQUEST['book_title'];
 $author_name = $_REQUEST['author_name'];
 $category = $_REQUEST['category'];
 
-
+echo $book_id
+echo $book_title
+echo $author_name
+echo $category
 // Update Data into Database
 $query = "UPDATE `books` SET `book_title`='$book_title', `author_name`='$author_name',`category`='$category' where `book_id`='$book_id'";
 
