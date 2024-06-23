@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include('connect.php'); // Include your database connection file
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,7 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = mysqli_fetch_assoc($result);
         if (password_verify($student_password, $row['password'])) {
             // Password is correct, login successful
-            $_SESSION['student_email'] = $student_email;
+            session_start();
+            $_SESSION["student_id"] = $row['user_id'];
+      
+
             header("Location: http://localhost/LMS/login/student/student_dashboard.php"); // Redirect to student dashboard
             exit;
         } else {
