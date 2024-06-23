@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 
 // Gather Data into variables 
 
-$specific_book_id = $_REQUEST['specific_book_id'];
+$specific_book_id = $data['specific_book_id'];
 $book_id= $data['book_id'];
 
 

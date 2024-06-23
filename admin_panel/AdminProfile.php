@@ -136,60 +136,67 @@
             </div>
 
             <div id='BooksData' class="DatabaseEntity">
-                <section id="booksTable">
-                    <div style='display:flex; justify-content:space-between;'>
+                <div style='display:flex; justify-content:space-between;'>
                         <h2>Books Table</h2>
                         <button id='create-book-btn' class="create-btn">Create New</button>
-                    </div>
-                    <div class="table-container">
-                        <table id="booksTableData">
-                            <?php
-                        
-                                
-                                include('connect.php');
-                                $query = "SELECT * FROM books";
-                                $result = mysqli_query($con, $query);
+                </div>
+                <br>
+                <div style='display:block;overflow-y:scroll;padding:0px 10px;max-height:80vh'>
+                    <section id="booksTable">
+                
+                        <div class="table-container">
+                            <table id="booksTableData">
+                                <?php
+                            
+                                    
+                                    include('connect.php');
+                                    $query = "SELECT * FROM books";
+                                    $result = mysqli_query($con, $query);
 
-                                if (!$result) {
-                                    die('Error in query: ' . mysqli_error($con));
-                                }
+                                    if (!$result) {
+                                        die('Error in query: ' . mysqli_error($con));
+                                    }
 
-                                echo "<table border='1'>
-                                <tr>
-                                <th>Book_id</th>
-                                <th>Book_title</th>
-                                <th>Author_name</th>
-                                <th>category</th>
-                                </tr>";
+                                    echo "<table border='1'>
+                                    <tr>
+                                    <th>Book_id</th>
+                                    <th>Book_title</th>
+                                    <th>Author_name</th>
+                                    <th>category</th>
+                                    </tr>";
 
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    echo "<tr>";
-                                    echo "<td contenteditable='false'>" . $row['book_id'] . "</td>";
-                                    echo "<td contenteditable='false'>" . $row['book_title'] . "</td>";
-                                    echo "<td contenteditable='false'>" . $row['author_name'] . "</td>";
-                                    echo "<td contenteditable='false'>" . $row['category'] . "</td>";
-                                    echo "<td><button class='edit-btn books-btn'>Edit</button></td>";
-                                    echo "</tr>";
-                                }
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        echo "<tr>";
+                                        echo "<td contenteditable='false'>" . $row['book_id'] . "</td>";
+                                        echo "<td contenteditable='false'>" . $row['book_title'] . "</td>";
+                                        echo "<td contenteditable='false'>" . $row['author_name'] . "</td>";
+                                        echo "<td contenteditable='false'>" . $row['category'] . "</td>";
+                                        echo "<td><button class='edit-btn books-btn'>Edit</button></td>";
+                                        echo "</tr>";
+                                    }
 
-                                echo "</table>";
+                                    echo "</table>";
 
-                                mysqli_close($con);
-                            ?>
-                        </table>
-                    </div>
-                </section>
+                                    mysqli_close($con);
+                                ?>
+                            </table>
+                        </div>
+                    </section>
+                </div>
             </div>
        
             <div id='SpecificBooksData' class="DatabaseEntity">
-                <section id="specificBookTable">
-                    <div style='display:flex; justify-content:space-between;'>
+                <div style='display:flex; justify-content:space-between;'>
                         <h2>Specific Book Table</h2>
                         <button id='create-specific-book-btn' class="create-btn">Create New</button>
-                    </div>
+                </div>
+                <br>
+                <div style='display:block;overflow-y:scroll;padding:0px 10px;max-height:80vh'>
+                <section id="specificBookTable">
+                    
                     <div class="table-container">
                         <table id="specificBookTableData">
-                        <?php
+                    <?php
                         
                                 
                         include('connect.php');
@@ -222,21 +229,25 @@
                         </table>
                     </div>
                 </section>
+                </div>
             </div>
 
             <div id='Records' class="DatabaseEntity">
-                <section id="Records">
-                    <div style='display:flex; justify-content:space-between;'>
+                  <div style='display:flex; justify-content:space-between;'>
                         <h2>Records</h2>
                         <button id='create-record-btn' class="create-btn">Create New</button>
                     </div>
+                    <br>
+                    <div style='display:block;overflow-y:scroll;padding:0px 10px;max-height:80vh'>
+                <section id="Records">
+                    
                     <div class="table-container">
                         <table id="Records">
                         <?php
                         
                                 
                         include('connect.php');
-                        $query = "SELECT * FROM record";
+                        $query = "SELECT * FROM records";
                         $result = mysqli_query($con, $query);
 
                         if (!$result) {
@@ -270,15 +281,18 @@
                         </table>
                     </div>
                 </section>
+                </div>
             </div>
 
             <div id='Admin' class="DatabaseEntity">
-                
-                <section id="Admin">
-                    <div style='display:flex; justify-content:space-between;'>
+                   <div style='display:flex; justify-content:space-between;'>
                         <h2>Admin</h2>
                         <button id='create-admin-btn' class="create-btn">Create New</button>
                     </div>
+                  <br>
+                <div style='display:block;overflow-y:scroll;padding:0px 10px;max-height:80vh'>
+                <section id="Admin">
+                    
                     <div class="table-container">
                         <table id="Admin">
                         <?php
@@ -318,7 +332,9 @@
                         </table>
                     </div>
                 </section>
-            </div>
+                </div>
+                    </div>
+            
         </div>
         
         <div class="sub_container right_container">

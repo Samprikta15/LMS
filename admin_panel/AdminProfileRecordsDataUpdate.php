@@ -12,15 +12,15 @@ if ($conn->connect_error) {
 
 // Gather Data into variables 
 $record_id= $data['record_id'];
-$specific_book_id = $_REQUEST['specific_book_id'];
-$user_id = $_REQUEST['user_id'];
-$issue_date = $_REQUEST['issue_date'];
-$return_date = $_REQUEST['return_date'];
+$specific_book_id = $data['specific_book_id'];
+$user_id = $data['user_id'];
+$issue_date = $data['issue_date'];
+$return_date = $data['return_date'];
 
 
 
 // Update Data into Database
-$query = "UPDATE `record` SET `specific_book_id`='$specific_book_id', `user_id`='$user_id',`issue_date`='$issue_date',`return_date`='$return_date' where `record_id`='$record_id'";
+$query = "UPDATE `records` SET `specific_book_id`='$specific_book_id', `user_id`='$user_id',`issue_date`='$issue_date',`return_date`='$return_date' where `record_id`='$record_id'";
 
 
 

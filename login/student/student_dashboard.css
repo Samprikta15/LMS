@@ -1,159 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
-
-
-.profile-btn{
-    background-color: #278172;
-    color: #fff;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 15px;
-    /* transition: background-color 0.3s; */
-}
-.profile-btn:hover{background-color: #27e0c2;}
-.profile-btn:active
-{background-color: #2f183e;}
-
-
-
-#studentDashboardPopup{
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.6 );
-}
-
-.profile-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s;
-  position:fixed;
-  top:35%;
-  left:35%;
-}
-
-.profile-card:hover {
-  transform: translateY(-10px);
-}
-
-.card-header {
-  background-color: #28a745;
-  color: #ffffff;
-  padding: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  margin: -20px -20px 20px -20px;
-}
-
-.card-header h2 {
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-size: 1.5em;
+  padding: 0;
+  background-color: #f0f0f0;
 }
 
-.card-header .student_edit-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #ffffff;
-  color: #28a745;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-.card-body p {
-  margin: 10px 0;
-  font-size: 1em;
+.container {
+  display: flex;
 }
 
-.card-body p strong {
-  color: #28a745;
+.sidebar {
+  width: 250px;
+  background-color: #2e7d32;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-.editable[contenteditable="true"] {
-  background-color: #e9f9e9;
-  border: 1px solid #28a745;
-  padding: 2px 5px;
-  border-radius: 5px;
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #388e3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 
-.action-buttons {
-  margin-top: 20px;
-}
-
-.action-buttons button {
-  background-color: #28a745;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  margin: 0 5px;
-}
-
-/*search bar*/
-header {
-  background-color: #f8f8f8;
-  padding: 10px 20px;
-  position: relative;
+.profile-pic img {
   width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: auto;
+  border-radius: 50%;
 }
 
-.search-container {
-  position: absolute;
-  right: 20px;
-  top: 10px;
+.menu {
+  width: 100%;
 }
 
-.search-container form {
-  position: relative;
+.menu-button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #388e3c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-align: left;
 }
 
-.search-container input[type="text"] {
-  width: 300px;
+.menu-button:hover {
+  background-color: #66bb6a;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
 }
 
-.suggestions-box {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  border: 1px solid #ccc;
-  border-top: none;
+.book-list {
   background-color: white;
-  z-index: 1000;
-  border-radius: 0 0 4px 4px;
-  max-height: 200px;
-  overflow-y: auto;
-  display: none;
+  padding: 20px;
+  border-radius: 8px;
 }
 
-.suggestions-box div {
+.book-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #a5d6a7;
   padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.book-title, .book-author, .book-copies, .issue-button {
+  flex: 1;
+  text-align: center;
+}
+
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.book-item:last-child {
+  border-bottom: none;
+}
+
+.book-item button {
+  background-color: #388e3c;
+  border: none;
+  color: white;
+  padding: 5px 10px;
   cursor: pointer;
+  border-radius: 4px;
 }
 
-.suggestions-box div:hover {
-  background-color: #f1f1f1;
+.book-item button:hover {
+  background-color: #66bb6a;
 }
-
-
 
 
 
