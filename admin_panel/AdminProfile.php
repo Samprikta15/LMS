@@ -226,6 +226,7 @@
 
                         mysqli_close($con);
                     ?>
+                    
                         </table>
                     </div>
                 </section>
