@@ -79,6 +79,8 @@ document.addEventListener('click', function(event) {
 });
 */
 /* new */
+
+
 const books = [
   { title: "Book One", author: "Author One", copies: 5 },
   { title: "Book Two", author: "Author Two", copies: 2 },
@@ -90,42 +92,45 @@ function showDetails(section) {
   // Implement the logic to show respective details
 }
 
-function populateBooks() {
-  const bookItems = document.getElementById('bookItems');
-  books.forEach(book => {
-      const bookItem = document.createElement('div');
-      bookItem.className = 'book-item';
-      
-      const titleDiv = document.createElement('div');
-      titleDiv.className = 'book-title';
-      titleDiv.innerText = book.title;
-      bookItem.appendChild(titleDiv);
-      
-      const authorDiv = document.createElement('div');
-      authorDiv.className = 'book-author';
-      authorDiv.innerText = book.author;
-      bookItem.appendChild(authorDiv);
-      
-      const copiesDiv = document.createElement('div');
-      copiesDiv.className = 'book-copies';
-      copiesDiv.innerText = book.copies;
-      bookItem.appendChild(copiesDiv);
-      
-      const issueButton = document.createElement('button');
-      issueButton.className = 'issue-button';
-      issueButton.innerText = 'Issue';
-      issueButton.onclick = () => issueBook(book.title);
-      bookItem.appendChild(issueButton);
-      
-      bookItems.appendChild(bookItem);
-  });
-}
+
 
 function issueBook(title) {
   alert(`Issuing book: ${title}`);
   // Implement the logic to issue a book
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  populateBooks();
-});
+
+
+
+
+
+
+/////////////// 
+button_to_popup_map ={
+  'user-profile-btn':'studentDashboardPopup',
+}
+
+
+function showDetails(detaild_item) {
+  if (detaild_item==="myDetails"){
+
+    document.getElementById("studentDashboardPopup").style.display = "block";
+  }
+  if (detaild_item==="borrowedBookDetails"){
+    document.getElementById("borrowBookDetailPopup").style.display = "block";
+  }
+}
+
+
+
+
+
+
+window.onclick = function(event) {
+  target = event.target
+  if (target.id === "studentDashboardPopup" || target.id == "borrowBookDetailPopup")
+    target.style.display='none'  
+};
+
+
+
