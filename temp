@@ -1,68 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="./student_dashboard.css">
+</head>
 <body>
-    <div id="borrowBookDetailPopup" class="popup">
-        <div class="profile-card">
-            <div class="card-header">
-                <h2>Borrowed Book List</h2>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile-pic">
+                <img src="profile-pic.png" alt="Profile Picture" onerror="this.onerror=null;this.src='default-pic.png';">
             </div>
-            <div class="card-body">
-                <table class="borrowed-books-table">
-                    <thead>
-                        <tr>
-                            <th>Book Title</th>
-                            <th>Specific Book ID</th>
-                            <th>Issue Date</th>
-                            <th>Return Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        include('connect.php');
-                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                            $password = $_POST['password'];
-                            $password = mysqli_real_escape_string($con, $password);
-                        }
-                        $student_id = 1; // Replace with dynamic student ID
-                        $query = "SELECT books.book_title as book_title, specific_book.specific_book_id as Book_ID, records.issue_date as issue_date, records.return_date as return_date
-                                  FROM records 
-                                  INNER JOIN specific_book ON records.specific_book_id = specific_book.specific_book_id 
-                                  INNER JOIN books ON specific_book.book_id = books.book_id 
-                                  WHERE records.user_id = '$student_id'";
-                        $result = mysqli_query($con, $query);
-
-                        if (!$result) {
-                            die('Error in query: ' . mysqli_error($con));
-                        }
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo "<tr>
-                                    <td>{$row['book_title']}</td>
-                                    <td>{$row['Book_ID']}</td>
-                                    <td>{$row['issue_date']}</td>
-                                    <td>{$row['return_date']}</td>
-                                  </tr>";
-                        }
-                        mysqli_close($con);
-                        ?>
-                    </tbody>
-                </table>
+            <div class="menu">
+                <button class="menu-button" onclick="showDetails('myDetails')">My Details</button>
+                <button class="menu-button" onclick="showDetails('editDetails')">Edit Details</button>
+                <button class="menu-button" onclick="showDetails('borrowedBookDetails')">Borrowed Book Details</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Search books by title, author, or category..." onkeyup="searchBooks()">
+            </div>
+            <div class="book-list">
+                <div class="book-header">
+                    <div class="book-title">Book Title</div>
+                    <div class="book-author">Book Author</div>
+                    <div class="book-copies">Book Copies Available</div>
+                    <div class="issue-button-container">Borrow</div>
+                </div>
+                <div id="bookItems">
+                    <!-- Book items will be dynamically inserted here -->
+                </div>
             </div>
         </div>
     </div>
+    <script src="./student_dashboard.js"></script>
 </body>
-$query = "SELECT books.book_title as book_title, specific_book.specific_book_id as Book_ID,  records.issue_date as issue_date, records.return_date  as return_date
-                  FROM records INNER JOIN specific_book ON records.specific_book_id = specific_book.specific_book_id 
-                  INNER JOIN books ON specific_book.book_id = books.book_id WHERE records.user_id = '$student_id'";
-                  $result = mysqli_query($con, $query);
+</html>
+<?php
+include('connect.php');
 
-                  if (!$result) {
-                      ie('Error in query: ' . mysqli_error($con));
-                  }
-                  while ($row = mysqli_fetch_assoc($result)) {
-                  echo "<p><strong> book_title : </strong>    <span id='user-id' class='editable'>"; echo $row['book_title']; echo "</span></p>";
-                  echo "<p><strong> Book_ID : </strong>    <span id='user-name' class='editable'>" ;echo $row['Book_ID']; echo "</span></p>";
-                  echo "<p><strong> issue_date : </strong>    <span id='user-email' class='editable'>" ;echo $row['issue_date']; echo "</span></p>";
-                  echo "<p><strong> return_date : </strong>    <span id='user-phone' class='editable'>" ;echo $row['return_date']; echo "</span></p>";
-                  
-                 
-                  }
-                  mysqli_close($con);
-                  ?>
+$search = $_GET['search'];
+$search = mysqli_real_escape_string($con, $search);
+
+$query = "
+    SELECT 
+        b.book_id AS book_id,
+        b.book_title AS book_title, 
+        b.author_name AS author_name, 
+        b.category AS category, 
+        COUNT(sb.specific_book_id) AS quantity 
+    FROM 
+        books b
+    LEFT JOIN 
+        specific_book sb 
+    ON 
+        b.book_id = sb.book_id 
+    WHERE 
+        b.book_title LIKE '%$search%' 
+        OR b.author_name LIKE '%$search%' 
+        OR b.category LIKE '%$search%'
+    GROUP BY 
+        b.book_id
+";
+
+$result = mysqli_query($con, $query);
+
+if (!$result) {
+    die('Error in query: ' . mysqli_error($con));
+}
+
+$books = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $books[] = $row;
+}
+
+mysqli_close($con);
+
+echo json_encode($books);
+?>

@@ -269,6 +269,94 @@ body {
 .borrowed-books-table tr:nth-child(even) {
   background-color: #f9f9f9;
 }
+/* for search bar*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #2e7d32;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.profile-pic img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.menu-button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.main-content {
+  width: 80%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.book-list {
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.book-header, .book-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.book-header {
+  font-weight: bold;
+}
+
+.book-item:last-child {
+  border-bottom: none;
+}
+
+.issue-button {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.issue-button:hover {
+  background-color: #27672b;
+}
 
 
 

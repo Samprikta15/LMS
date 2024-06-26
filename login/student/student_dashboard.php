@@ -164,7 +164,8 @@
         </div>
         <div class="main-content">
             <div class="search-bar">
-                <input type="text" id="search" placeholder="Search books...">
+                <input type="text" id="search" placeholder="Search books by title, author, or category..." onkeyup="searchBooks()">
+        
             </div>
             <div class="book-list">
                 <div class="book-header">
