@@ -101,7 +101,17 @@
                  
               </div>
               <div class="card-body">
-              <?php
+              <table class="borrowed-books-table">
+                    <thead>
+                        <tr>
+                            <th>Book Title</th>
+                            <th>Specific Book ID</th>
+                            <th>Issue Date</th>
+                            <th>Return Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                 <?php
                   include('connect.php');
                   if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $password = $_POST['password'];
@@ -109,24 +119,28 @@
                   }
                 //   $student_id=$_SESSION['student_id'];
                   $student_id=1;
-                  $query = "SELECT books.book_title as book_title, specific_book.specific_book_id as Book_ID,  records.issue_date as issue_date, records.return_date  as return_date
-                  FROM records INNER JOIN specific_book ON records.specific_book_id = specific_book.specific_book_id 
-                  INNER JOIN books ON specific_book.book_id = books.book_id WHERE records.user_id = '$student_id'";
+                  $query = "SELECT books.book_title as book_title, specific_book.specific_book_id as Book_ID, records.issue_date as issue_date, records.return_date as return_date
+                  FROM records 
+                  INNER JOIN specific_book ON records.specific_book_id = specific_book.specific_book_id 
+                  INNER JOIN books ON specific_book.book_id = books.book_id 
+                  WHERE records.user_id = '$student_id'";
                   $result = mysqli_query($con, $query);
 
                   if (!$result) {
-                      ie('Error in query: ' . mysqli_error($con));
-                  }
+                        die('Error in query: ' . mysqli_error($con));
+                    }
                   while ($row = mysqli_fetch_assoc($result)) {
-                  echo "<p><strong> book_title : </strong>    <span id='user-id' class='editable'>"; echo $row['book_title']; echo "</span></p>";
-                  echo "<p><strong> Book_ID : </strong>    <span id='user-name' class='editable'>" ;echo $row['Book_ID']; echo "</span></p>";
-                  echo "<p><strong> issue_date : </strong>    <span id='user-email' class='editable'>" ;echo $row['issue_date']; echo "</span></p>";
-                  echo "<p><strong> return_date : </strong>    <span id='user-phone' class='editable'>" ;echo $row['return_date']; echo "</span></p>";
-                  
-                 
-                  }
-                  mysqli_close($con);
-              ?>
+                  echo "<tr>
+                           <td>{$row['book_title']}</td>
+                           <td>{$row['Book_ID']}</td>
+                           <td>{$row['issue_date']}</td>
+                           <td>{$row['return_date']}</td>
+                           </tr>";
+                        }
+                      mysqli_close($con);
+                    ?>
+                    </tbody>
+                    </table>
                   <div class="action-buttons" style="display: none;">
                     <button type="button" onclick="submitForm()">Submit</button>
                     <button type="button" onclick="toggleEditMode()">Cancel</button>

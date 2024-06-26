@@ -217,6 +217,58 @@ max-width:100px;
   margin: 0 5px;
 }
 
+/* for table format of borrowed book list */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 60%;
+}
+
+.card-header {
+  background-color: #2e7d32;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.borrowed-books-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.borrowed-books-table th, .borrowed-books-table td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.borrowed-books-table th {
+  background-color: #f2f2f2;
+}
+
+.borrowed-books-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
 
 
 
