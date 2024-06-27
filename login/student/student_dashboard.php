@@ -55,41 +55,40 @@
           </div>      
 </div>
 <!-- Edit Details  -->
-<div id="studentDashboardPopup" class="popup">
-          <div class="profile-card">
-              <div class="card-header">
-                  <h2>Student Profile</h2>
-                  <button class="student_edit-btn" onclick="toggleEditMode()">Edit</button>
-              </div>
-              <div class="card-body">
-              <?php
-                  include('connect.php');
-                  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $password = $_POST['password'];
-                  $password = mysqli_real_escape_string($con, $password);
-                  }
-                  $query = "SELECT * FROM user WHERE category='student' and email='s1@gmail.com'";
-                  $result = mysqli_query($con, $query);
 
-                  if (!$result) {
-                      ie('Error in query: ' . mysqli_error($con));
-                  }
-                  while ($row = mysqli_fetch_assoc($result)) {
-                  echo "<p><strong> User_id : </strong>    <span id='user-id' class='editable'>"; echo $row['user_id']; echo "</span></p>";
-                  echo "<p><strong> Name : </strong>    <span id='user-name' class='editable'>" ;echo $row['name']; echo "</span></p>";
-                  echo "<p><strong> Email : </strong>    <span id='user-email' class='editable'>" ;echo $row['email']; echo "</span></p>";
-                  echo "<p><strong> Phone_no : </strong>    <span id='user-phone' class='editable'>" ;echo $row['phone_no']; echo "</span></p>";
-                  echo "<p><strong> Roll_no_or_id : </strong>    <span id='user-roll' class='editable'>" ;echo $row['roll_no_or_id']; echo "</span></p>";
-                 
-                  }
-                  mysqli_close($con);
-              ?>
-                  <div class="action-buttons" style="display: none;">
-                    <button type="button" onclick="submitForm()">Submit</button>
-                    <button type="button" onclick="toggleEditMode()">Cancel</button>
-                </div>
-              </div>
-          </div>      
+
+<div id="studentDashboardPopupEdit" class="popup">
+    <div class="profile-card">
+        <div class="card-header">
+            <h2>Edit Profile</h2>
+        </div>
+        <div class="card-body">
+    
+            <form action="studentdashboardeditfrom.php" method="post">
+                  
+                    <div class="form-row">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="phone_no">Phone No:</label>
+                        <input type="text" id="phone_no" name="phone_no" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="roll_no_or_id">Roll No/ID:</label>
+                        <input type="text" id="roll_no_or_id" name="roll_no_or_id" required>
+                    </div>
+                    <div class="form-row">
+                        <button type="submit">Submit</button>
+                        <button type="button" onclick="closeForm()">Close</button>
+                    </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 <!-- Borrow Book Details  -->
@@ -158,14 +157,15 @@
             </div>
             <div class="menu">
                 <button class="menu-button" onclick="showDetails('myDetails')">My Details</button>
-                <button class="menu-button" onclick="showDetails('editDetails')">Edit Details</button>
+                <button class="menu-button" onclick="showDetails('myDetailsEdit')">Edit Details</button>
                 <button class="menu-button" onclick="showDetails('borrowedBookDetails')">Borrowed Book Details</button>
             </div>
         </div>
         <div class="main-content">
             <div class="search-bar">
                 <input type="text" id="search" placeholder="Search books by title, author, or category..." onkeyup="searchBooks()">
-        
+                 <button class="search-button" onclick="searchBooks()">GO</button> 
+                    
             </div>
             <div class="book-list">
                 <div class="book-header">
