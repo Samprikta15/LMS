@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include('connect.php'); // Include your database connection file
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,8 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = mysqli_fetch_assoc($result);
         if (password_verify($teacher_password, $row['password'])) {
             // Password is correct, login successful
-            $_SESSION['teacher_email'] = $teacher_email;
-            header("Location: teacher_dashboard.php"); // Redirect to teacher dashboard
+            session_start();
+            $_SESSION["teacher_id"] = $row['user_id'];
+      
+
+            header("Location: http://localhost/LMS/login/teacher/teacher_dashboard.php"); // Redirect to teacher dashboard
             exit;
         } else {
             // Invalid password
@@ -36,10 +39,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 mysqli_close($con); // Close the database connection
 ?>
 
-
 <?php
-	mysqli_close($con);
+	//mysqli_close($con);
 	//Redirect to a specific URL
-	header("Location: ../index.php");
+	header("Location: http://localhost/LMS/login/teacher/teacher_dashboard.php");
 	exit; // Make sure to exit after the redirect to prevent further execution
 ?>

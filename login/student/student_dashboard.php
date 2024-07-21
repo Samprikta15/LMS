@@ -145,7 +145,8 @@
                     <button type="button" onclick="toggleEditMode()">Cancel</button>
                 </div>
               </div>
-          </div>      
+          </div>   
+      
 </div>
 
 <!-- Popup Elements End -->
@@ -252,7 +253,7 @@
             </div>
         </div>
   </div>
-
+  <div><button class="issue-button"> <a href="http://localhost/LMS">Log Out </button></div> 
   <script src="./student_dashboard_.js"></script>
 </body>
 </html>

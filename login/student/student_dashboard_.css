@@ -127,7 +127,7 @@ max-width:100px;
 }
 
 .book-item button {
-  background-color: #388e3c;
+  background-color: #429646;
   border: none;
   color: white;
   padding: 5px 10px;
@@ -136,7 +136,7 @@ max-width:100px;
 }
 
 .book-item button:hover {
-  background-color: #66bb6a;
+  background-color: #6ec573;
 }
 
 

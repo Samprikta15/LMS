@@ -1,67 +1,28 @@
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="teacher_dashboard.css">
-<link rel="stylesheet" href="navbar.css">
-<style>
-body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('t.jpeg');
-            background-repeat:no-repeat;
-            background-attachment: fixed;
-            background-size:100% 100%;
-        }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dasboard</title>
+    <link rel="stylesheet" href="teacher_dashboard_.css">
+    <?php 
+    session_start();
+      if ($_SESSION['is_loggedin'] = false){
+        header("Location: Teacher.php");
+      }
+      ?>
 </head>
-<body style="background-color:LightCyan">
-<div class="navbar">
-
-    <a href="http://localhost/LMS/contact/contact.php">Contact</a>
-  <a href="http://localhost/LMS/register/Registration_frontend.php">Register</a>
-  <div class="dropdown">
-  <button class="dropbtn" onclick="myFunction()">Login
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-content" id="myDropdown">
-    <a href="http://localhost/LMS/login/student/student.php">Student Login</a>
-    <a href="http://localhost/LMS/login/teacher/teacher.php">Teacher Login</a>
-    <a href="http://localhost/LMS/login/admin/admin.php">Admin Login</a>
-  </div>
-  </div>
-    <a href="http://localhost/LMS/">Home</a>
-</div>
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-  var myDropdown = document.getElementById("myDropdown");
-    if (myDropdown.classList.contains('show')) {
-      myDropdown.classList.remove('show');
-    }
-  }
-}
-
-</script>
 
 
+<body>
 
 
-<div style="padding:20px">
-</div>
+<!-- Popup Elements start -->
 <div id="teacherDashboardPopup" class="popup">
-
-
-
           <div class="profile-card">
               <div class="card-header">
                   <h2>Teacher Profile</h2>
-                  <button class="teacher_edit-btn" onclick="toggleEditMode()">Edit</button>
               </div>
               <div class="card-body">
               <?php
@@ -70,36 +31,229 @@ window.onclick = function(e) {
                     $password = $_POST['password'];
                   $password = mysqli_real_escape_string($con, $password);
                   }
-                  $query = "SELECT * FROM user WHERE category='teacher' and email='r@gmail.com'";
+                //   session_start();
+                //   $email=$_SESSION['teacher_email'];
+                  $email="r@gmail.com";
+                  $query = "SELECT * FROM user WHERE category='teacher' and email='$email'";
                   $result = mysqli_query($con, $query);
 
                   if (!$result) {
                       ie('Error in query: ' . mysqli_error($con));
                   }
                   while ($row = mysqli_fetch_assoc($result)) {
-                  echo "<p><strong> User_id : </strong>    <span id='user-id' class='editable'>"; echo $row['user_id']; echo "</span></p>";
-                  echo "<p><strong> Name : </strong>    <span id='user-name' class='editable'>" ;echo $row['name']; echo "</span></p>";
-                  echo "<p><strong> Email : </strong>    <span id='user-email' class='editable'>" ;echo $row['email']; echo "</span></p>";
-                  echo "<p><strong> Phone_no : </strong>    <span id='user-phone' class='editable'>" ;echo $row['phone_no']; echo "</span></p>";
-                  echo "<p><strong> Roll_no_or_id : </strong>    <span id='user-roll' class='editable'>" ;echo $row['roll_no_or_id']; echo "</span></p>";
+                  echo "<p><strong> User_id : </strong>"; echo $row['user_id']; echo "</p>";
+                  echo "<p><strong> Name : </strong> " ;echo $row['name']; echo "</p>";
+                  echo "<p><strong> Email : </strong>" ;echo $row['email']; echo "</p>";
+                  echo "<p><strong> Phone_no : </strong>" ;echo $row['phone_no']; echo "</p>";
+                  echo "<p><strong> Roll_no_or_id : </strong> " ;echo $row['roll_no_or_id']; echo "</p>";
                  
                   }
                   mysqli_close($con);
               ?>
+                  
+              </div>
+          </div>      
+</div>
+<!-- Edit Details  -->
+
+
+<div id="teacherDashboardPopupEdit" class="popup">
+    <div class="profile-card">
+        <div class="card-header">
+            <h2>Edit Profile</h2>
+        </div>
+        <div class="card-body">
+    
+            <form action="teacherdashboardeditfrom.php" method="post">
+                  
+                    <div class="form-row">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="phone_no">Phone No:</label>
+                        <input type="text" id="phone_no" name="phone_no" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="roll_no_or_id">Roll No/ID:</label>
+                        <input type="text" id="roll_no_or_id" name="roll_no_or_id" required>
+                    </div>
+                    <div class="form-row">
+                        <button type="submit">Submit</button>
+                        <button type="button" onclick="closeForm()">Close</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Borrow Book Details  -->
+
+<div id="borrowBookDetailPopup" class="popup">
+          <div class="profile-card">
+              <div class="card-header">
+                  <h2>Borrowed Book List</h2>
+                 
+              </div>
+              <div class="card-body">
+              <table class="borrowed-books-table">
+                    <thead>
+                        <tr>
+                            <th>Book Title</th>
+                            <th>Specific Book ID</th>
+                            <th>Issue Date</th>
+                            <th>Return Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                 <?php
+                  include('connect.php');
+                  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $password = $_POST['password'];
+                  $password = mysqli_real_escape_string($con, $password);
+                  }
+                //   $teacher_id=$_SESSION['teacher_id'];
+                  $teacher_id=4;
+                  $query = "SELECT books.book_title as book_title, specific_book.specific_book_id as Book_ID, records.issue_date as issue_date, records.return_date as return_date
+                  FROM records 
+                  INNER JOIN specific_book ON records.specific_book_id = specific_book.specific_book_id 
+                  INNER JOIN books ON specific_book.book_id = books.book_id 
+                  WHERE records.user_id = '$teacher_id'";
+                  $result = mysqli_query($con, $query);
+
+                  if (!$result) {
+                        die('Error in query: ' . mysqli_error($con));
+                    }
+                  while ($row = mysqli_fetch_assoc($result)) {
+                  echo "<tr>
+                           <td>{$row['book_title']}</td>
+                           <td>{$row['Book_ID']}</td>
+                           <td>{$row['issue_date']}</td>
+                           <td>{$row['return_date']}</td>
+                           </tr>";
+                        }
+                      mysqli_close($con);
+                    ?>
+                    </tbody>
+                    </table>
                   <div class="action-buttons" style="display: none;">
                     <button type="button" onclick="submitForm()">Submit</button>
                     <button type="button" onclick="toggleEditMode()">Cancel</button>
                 </div>
               </div>
-          </div>      
+          </div>   
+      
 </div>
-<div class="search-container">
-            <form autocomplete="off">
-                <input type="text" placeholder="Search..." id="search" onkeyup="showSuggestions(this.value)">
-                <div id="suggestions" class="suggestions-box"></div>
-            </form>
+
+<!-- Popup Elements End -->
+
+  <div class="container">
+        <div class="sidebar">
+            <div class="profile-pic">
+                <img src="profile-pic.png" alt="Profile Picture" onerror="this.onerror=null;this.src='default-pic.png';">
+            </div>
+            <div class="menu">
+                <button class="menu-button" onclick="showDetails('myDetails')">My Details</button>
+                <button class="menu-button" onclick="showDetails('myDetailsEdit')">Edit Details</button>
+                <button class="menu-button" onclick="showDetails('borrowedBookDetails')">Borrowed Book Details</button>
+            </div>
         </div>
-<button id='user-profile-btn' class="profile-btn">User Profile</button>
-<script src="teacher_dashboard.js"></script>
+        <div class="main-content">
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Search books by title, author, or category..." onkeyup="searchBooks()">
+                 <button class="search-button" onclick="searchBooks()">GO</button> 
+                    
+            </div>
+            <div class="book-list">
+                <div class="book-header">
+                    <div class="book-title">Book Title</div>
+                    <div class="book-author">Book Author</div>
+                    <div class="book-copies">Book Copies Available</div>
+                    <div class="issue-button-container">Borrow</div>
+                </div>
+                <div id="bookItems">
+                    <!--PHP Code Start -->
+
+
+                    <?php
+                                include('connect.php');
+                                $query = "
+                                            SELECT 
+                                                b.book_id AS book_id,
+                                                b.book_title AS book_title, 
+                                                b.author_name AS author_name, 
+                                                COUNT(sb.specific_book_id) AS quantity 
+                                            FROM 
+                                                books b
+                                            LEFT JOIN 
+                                                specific_book sb 
+                                            ON 
+                                                b.book_id = sb.book_id 
+                                            GROUP BY 
+                                                b.book_id
+                                        ";
+
+                                $result = mysqli_query($con, $query);
+
+                                if (!$result) {
+                                    die('Error in query: ' . mysqli_error($con));
+                                }
+
+            
+                                while ($row = mysqli_fetch_assoc($result)) {
+
+                                    
+                                 echo "<div class='book-item'>" ;
+                                 echo "<div class='book-title'>" . $row['book_title'] .  "</div>" ;
+                                 echo "<div class='book-author'>" . $row['author_name'] .  "</div>" ;
+                                 echo "<div class='book-copies'>".$row['quantity']."</div>" ;
+                                 echo "<div class='issue-button-container'>" ;
+                                 echo "    <button class='issue-button' id='".$row['book_id']."'> Borrow </button>" ;
+                                 echo "    </div>" ;
+                                 echo "</div>" ;
+                                }
+
+                                echo "</table>";
+
+                                mysqli_close($con);
+                    ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="book-item">
+                        <div class="book-title"> ____ </div>
+                        <div class="book-author"> ____ </div>
+                        <div class="book-copies"> ____ </div>
+                        <div class="issue-button-container">
+                            <button class="issue-button"> Borrow </button>
+                        </div>
+                    </div>
+                    <!--PHP Code End -->
+                </div>
+            </div>
+        </div>
+  </div>
+  <div><button class="issue-button"> <a href="http://localhost/LMS">Log Out </button></div> 
+  <script src="teacher_dashboard_.js"></script>
 </body>
 </html>
